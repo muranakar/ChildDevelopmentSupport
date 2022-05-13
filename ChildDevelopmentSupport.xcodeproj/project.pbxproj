@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		B2981488282DAF2200A3D0C3 /* ChildDevelopmentSupport.json in Resources */ = {isa = PBXBuildFile; fileRef = B2981487282DAF2200A3D0C3 /* ChildDevelopmentSupport.json */; };
 		B298148E282DCAB500A3D0C3 /* DecoderFacliityInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B298148D282DCAB500A3D0C3 /* DecoderFacliityInformation.swift */; };
+		B2981492282DD52300A3D0C3 /* Prefecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2981491282DD52300A3D0C3 /* Prefecture.swift */; };
+		B2981494282DD87A00A3D0C3 /* PrefectureRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2981493282DD87A00A3D0C3 /* PrefectureRepository.swift */; };
 		B2A945D2282C6B810001B737 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A945D1282C6B810001B737 /* AppDelegate.swift */; };
 		B2A945D4282C6B810001B737 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A945D3282C6B810001B737 /* SceneDelegate.swift */; };
 		B2A945D9282C6B810001B737 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2A945D7282C6B810001B737 /* Main.storyboard */; };
@@ -26,6 +28,8 @@
 /* Begin PBXFileReference section */
 		B2981487282DAF2200A3D0C3 /* ChildDevelopmentSupport.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ChildDevelopmentSupport.json; sourceTree = "<group>"; };
 		B298148D282DCAB500A3D0C3 /* DecoderFacliityInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecoderFacliityInformation.swift; sourceTree = "<group>"; };
+		B2981491282DD52300A3D0C3 /* Prefecture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prefecture.swift; sourceTree = "<group>"; };
+		B2981493282DD87A00A3D0C3 /* PrefectureRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrefectureRepository.swift; sourceTree = "<group>"; };
 		B2A945CE282C6B810001B737 /* ChildDevelopmentSupport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChildDevelopmentSupport.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2A945D1282C6B810001B737 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2A945D3282C6B810001B737 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +97,8 @@
 				B2A945D1282C6B810001B737 /* AppDelegate.swift */,
 				B2A945D3282C6B810001B737 /* SceneDelegate.swift */,
 				B2A945E7282C6C5A0001B737 /* FacilityInformation.swift */,
+				B2981493282DD87A00A3D0C3 /* PrefectureRepository.swift */,
+				B2981491282DD52300A3D0C3 /* Prefecture.swift */,
 				B2981489282DB07000A3D0C3 /* CSV */,
 				B298148A282DB09300A3D0C3 /* Json */,
 				B2B85F03282D44B70065E12E /* Initial */,
@@ -206,8 +212,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2981492282DD52300A3D0C3 /* Prefecture.swift in Sources */,
 				B2A945EA282C6D560001B737 /* CSVConversion.swift in Sources */,
 				B2B85EFE282D43580065E12E /* MapViewController.swift in Sources */,
+				B2981494282DD87A00A3D0C3 /* PrefectureRepository.swift in Sources */,
 				B298148E282DCAB500A3D0C3 /* DecoderFacliityInformation.swift in Sources */,
 				B2A945D2282C6B810001B737 /* AppDelegate.swift in Sources */,
 				B2A945D4282C6B810001B737 /* SceneDelegate.swift in Sources */,

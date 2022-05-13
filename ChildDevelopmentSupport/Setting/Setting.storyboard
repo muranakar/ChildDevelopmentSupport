@@ -15,11 +15,31 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qXb-gY-pQp">
+                                <rect key="frame" x="0.0" y="144" width="414" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="ild-mO-hrE"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="Y6W-OH-hqX" id="CaY-7b-1FM"/>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="0uF-OD-VOx"/>
+                                </connections>
+                            </pickerView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qXb-gY-pQp" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="WF8-LY-zCc"/>
+                            <constraint firstItem="qXb-gY-pQp" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="adE-ga-Gam"/>
+                            <constraint firstItem="qXb-gY-pQp" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="100" id="vhk-iK-Jfr"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="設定" image="gearshape" catalog="system" id="q1b-QK-dFN"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="prefecturePickerView" destination="qXb-gY-pQp" id="rqQ-Gd-Tk9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -27,7 +47,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="gearshape" catalog="system" width="128" height="121"/>
+        <image name="gearshape" catalog="system" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
