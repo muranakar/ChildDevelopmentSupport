@@ -4,6 +4,11 @@
 <dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>あなたの位置情報を使用します。</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

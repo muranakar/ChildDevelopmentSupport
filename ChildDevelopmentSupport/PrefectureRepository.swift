@@ -9,14 +9,16 @@ import Foundation
 
 struct PrefectureRepository {
     let key = "prefecture"
-    func load() -> JapanesePrefecture {
+    func load() -> JapanesePrefecture? {
         let loadPrefectureString = UserDefaults.standard.string(forKey: key)
         let prefectures = JapanesePrefecture.all
-        let filteredPrefecture = prefectures.filter { $0.name == loadPrefectureString }.first!
+        guard let filteredPrefecture = prefectures.filter({ $0.nameWithSuffix == loadPrefectureString }).first else {
+            return nil
+        }
         return filteredPrefecture
     }
     func save(prefecture: JapanesePrefecture) {
-        UserDefaults.standard.set(prefecture.name, forKey: key)
+        UserDefaults.standard.set(prefecture.nameWithSuffix, forKey: key)
     }
     // 削除はなくてもよいか。
 //    func remove() {

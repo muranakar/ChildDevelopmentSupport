@@ -16,35 +16,134 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Ayj-MI-RPd">
-                                <rect key="frame" x="0.0" y="44" width="414" height="569"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ayj-MI-RPd">
+                                <rect key="frame" x="0.0" y="44" width="414" height="589"/>
                                 <connections>
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="fHf-aS-adD"/>
                                 </connections>
                             </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="事業所名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0bB-o1-BpA">
+                                <rect key="frame" x="20" y="653" width="69.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PkR-2U-sfA">
+                                <rect key="frame" x="20" y="683.5" width="41.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="hvt-Vv-zTf">
+                                <rect key="frame" x="20" y="724" width="374" height="13.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="FrB-oL-kru">
+                                        <rect key="frame" x="0.0" y="0.0" width="144" height="13.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TEL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hi3-Pk-oJo">
+                                                <rect key="frame" x="0.0" y="0.0" width="42" height="13.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R2w-at-xwj">
+                                                <rect key="frame" x="62" y="0.0" width="82" height="13.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="gsC-7o-lOc">
+                                        <rect key="frame" x="184" y="0.0" width="190" height="13.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FAX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oon-2j-BuH">
+                                                <rect key="frame" x="0.0" y="0.0" width="57.5" height="13.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jIC-Tg-9Gz">
+                                                <rect key="frame" x="77.5" y="0.0" width="112.5" height="13.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Iax-wx-Zfe">
+                                <rect key="frame" x="20" y="757.5" width="374" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bok-97-xyR">
+                                        <rect key="frame" x="0.0" y="0.0" width="187" height="40"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="コピー"/>
+                                        <connections>
+                                            <action selector="copyFacilityInformation:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="8ir-Vc-m24"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y74-Xs-tIz">
+                                        <rect key="frame" x="187" y="0.0" width="187" height="40"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="検索"/>
+                                        <connections>
+                                            <action selector="searchFacilityInformation:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="YqM-MK-aTl"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="f7u-V4-3G2"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Ayj-MI-RPd" secondAttribute="bottom" constant="200" id="UVG-g8-v9l"/>
+                            <constraint firstItem="PkR-2U-sfA" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="CRq-Nh-Fa4"/>
+                            <constraint firstItem="0bB-o1-BpA" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="HuZ-Eb-FyX"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="hvt-Vv-zTf" secondAttribute="trailing" constant="20" id="KZd-eX-gzR"/>
+                            <constraint firstItem="hvt-Vv-zTf" firstAttribute="top" secondItem="PkR-2U-sfA" secondAttribute="bottom" constant="20" id="NZz-DF-0Cg"/>
+                            <constraint firstItem="Iax-wx-Zfe" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="PBa-kD-FI3"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Iax-wx-Zfe" secondAttribute="trailing" constant="20" id="ROg-95-FWx"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Ayj-MI-RPd" secondAttribute="bottom" constant="180" id="UVG-g8-v9l"/>
+                            <constraint firstItem="0bB-o1-BpA" firstAttribute="top" secondItem="Ayj-MI-RPd" secondAttribute="bottom" constant="20" id="WSf-E9-dvS"/>
+                            <constraint firstItem="Iax-wx-Zfe" firstAttribute="top" secondItem="hvt-Vv-zTf" secondAttribute="bottom" constant="20" id="WfT-KN-5Rp"/>
+                            <constraint firstItem="hvt-Vv-zTf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="WsZ-za-Qsr"/>
                             <constraint firstItem="Ayj-MI-RPd" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="ZvQ-A0-QeF"/>
                             <constraint firstItem="Ayj-MI-RPd" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="hV7-SR-5iD"/>
+                            <constraint firstItem="PkR-2U-sfA" firstAttribute="top" secondItem="0bB-o1-BpA" secondAttribute="bottom" constant="10" id="tF7-wa-jcv"/>
                             <constraint firstItem="Ayj-MI-RPd" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="vTZ-gZ-iv3"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="地図" image="map" catalog="system" id="EWs-a0-bMG"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="facilityInformationFaxLabel" destination="jIC-Tg-9Gz" id="RPj-SM-GdX"/>
+                        <outlet property="facilityInformationNameLabel" destination="PkR-2U-sfA" id="pNi-In-7fl"/>
+                        <outlet property="facilityInformationTelLabel" destination="R2w-at-xwj" id="euM-20-rSC"/>
                         <outlet property="mapView" destination="Ayj-MI-RPd" id="QuG-ED-GRd"/>
+                        <segue destination="vQq-rw-HZc" kind="presentation" identifier="webView" destinationCreationSelector="makeAssessmentWithCoder:sender:segueIdentifier:" modalPresentationStyle="fullScreen" id="HH0-hj-Fcl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-17.39130434782609" y="91.741071428571431"/>
+            <point key="canvasLocation" x="50.724637681159422" y="85.714285714285708"/>
+        </scene>
+        <!--WebView-->
+        <scene sceneID="Jlh-cY-7Wv">
+            <objects>
+                <viewControllerPlaceholder storyboardName="WebView" id="vQq-rw-HZc" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="dQs-dM-Ce7"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jsf-wi-dMN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="609" y="120"/>
         </scene>
     </scenes>
     <resources>
-        <image name="map" catalog="system" width="32" height="32"/>
+        <image name="map" catalog="system" width="128" height="110"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
