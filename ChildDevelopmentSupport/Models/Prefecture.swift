@@ -13,7 +13,6 @@ import Foundation
  都道府県のidは1から始まる連番なので、raw valueをそのままidとしては使えない。
 */
 enum JapanesePrefecture: Int {
-
     // 北海道
     case hokkaido
 
@@ -77,12 +76,10 @@ enum JapanesePrefecture: Int {
     case kagoshima
     case okinawa
 
-
     /*
      都道府県に振り分けられたidは1から始まる連番。raw valueと同じではない点に注意。
     */
     var id: Int { return self.rawValue + 1 }
-
 
     /*
      suffix(都、府、県)を取り除いた文字列。
@@ -90,7 +87,6 @@ enum JapanesePrefecture: Int {
     */
     var name: String {
         switch self {
-
         // 北海道
         case .hokkaido: return "北海道"
 
@@ -239,7 +235,7 @@ enum JapanesePrefecture: Int {
         .oita,
         .miyazaki,
         .kagoshima,
-        .okinawa,
+        .okinawa
         ]
     }
 }

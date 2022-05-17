@@ -19,11 +19,12 @@ struct DecoderFacilityInformation {
         }
         /// ③JSONデコード処理
         let decoder = JSONDecoder()
-        guard let decoderFacilityInformations = try? decoder.decode([DecodableFacilityInformation].self, from: data) else {
+        guard let decoderFacilityInformations =
+                try? decoder.decode([DecodableFacilityInformation].self, from: data) else {
             fatalError("JSON読み込みエラー")
         }
 
-//        let facilityInformations = decoderFacilityInformations.map { FacilityInformation(decoder: $0)}
+        //        let facilityInformations = decoderFacilityInformations.map { FacilityInformation(decoder: $0)}
 
         return decoderFacilityInformations
     }
@@ -39,7 +40,8 @@ struct DecoderFacilityInformation {
         }
         /// ③JSONデコード処理
         let decoder = JSONDecoder()
-        guard let decoderFacilityInformations = try? decoder.decode([DecodableFacilityInformation].self, from: data) else {
+        guard let decoderFacilityInformations =
+                try? decoder.decode([DecodableFacilityInformation].self, from: data) else {
             fatalError("JSON読み込みエラー")
         }
 
@@ -48,7 +50,6 @@ struct DecoderFacilityInformation {
         return facilityInformations
     }
 }
-
 
 struct DecodableFacilityInformation: Decodable {
     let corporateName: String
@@ -84,22 +85,20 @@ struct DecodableFacilityInformation: Decodable {
     }
 }
 
-
 private extension FacilityInformation {
     init(decoder: DecodableFacilityInformation) {
-            corporateName = decoder.corporateName
-            corporateKana = decoder.corporateKana
-            corporateURL = decoder.corporateURL
-            corporateTelephoneNumber = decoder.corporateTelephoneNumber
-            corporateFax = decoder.corporateFax
-            officeName = decoder.officeName
-            officeNameKana = decoder.officeNameKana
-            officeURL = decoder.officeURL
-            officeTelephoneNumber = decoder.officeTelephoneNumber
-            officeFax = decoder.officeFax
-            address = decoder.addressCity + decoder.addressNumber
-            latitude = decoder.latitude
-            longitude = decoder.longitude
+        corporateName = decoder.corporateName
+        corporateKana = decoder.corporateKana
+        corporateURL = decoder.corporateURL
+        corporateTelephoneNumber = decoder.corporateTelephoneNumber
+        corporateFax = decoder.corporateFax
+        officeName = decoder.officeName
+        officeNameKana = decoder.officeNameKana
+        officeURL = decoder.officeURL
+        officeTelephoneNumber = decoder.officeTelephoneNumber
+        officeFax = decoder.officeFax
+        address = decoder.addressCity + decoder.addressNumber
+        latitude = decoder.latitude
+        longitude = decoder.longitude
     }
 }
-

@@ -11,11 +11,25 @@ class SettingViewController: UIViewController {
     let pickerViewItems = JapanesePrefecture.all.map { prefecture in
         prefecture.nameWithSuffix
     }
+
     let prefectureRepository = PrefectureRepository()
 
-    @IBOutlet weak var prefecturePickerView: UIPickerView!
+    @IBOutlet weak private var prefecturePickerView: UIPickerView!
 
-    func configurePicekerView() {
+    override func viewDidLayoutSubviews() {
+        selectRowPrefecturePickerView()
+    }
+    @IBAction private func configureCoreLocation(_ sender: Any) {
+        guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else { return }
+        if UIApplication.shared.canOpenURL(settingsUrl) {
+            UIApplication.shared.open(settingsUrl, completionHandler: nil)
+        }
+    }
+    private func selectRowPrefecturePickerView() {
+        guard let loadedPrefecture = prefectureRepository.load() else { return }
+        let prefectureRow = pickerViewItems.firstIndex(of: loadedPrefecture.nameWithSuffix)
+        guard let prefectureRow = prefectureRow else { return }
+        prefecturePickerView.selectRow(prefectureRow, inComponent: 0, animated: true)
     }
 }
 

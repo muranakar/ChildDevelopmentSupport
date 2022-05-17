@@ -10,6 +10,12 @@
 		B2916E8C282EFBCF006134BE /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2916E8B282EFBCF006134BE /* WebViewViewController.swift */; };
 		B2916E8E282EFBDC006134BE /* WebView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2916E8D282EFBDC006134BE /* WebView.storyboard */; };
 		B2916E91282EFCAF006134BE /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2916E90282EFCAF006134BE /* WebKit.framework */; };
+		B294DF912833103E00C7C809 /* PasteboardFormatterFacilityInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B294DF902833103E00C7C809 /* PasteboardFormatterFacilityInformation.swift */; };
+		B294DF9D2833178400C7C809 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B294DF9C2833178400C7C809 /* Colors.swift */; };
+		B294DF9F283317AB00C7C809 /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B294DF9E283317AB00C7C809 /* UIAlertController.swift */; };
+		B294DFA42833196B00C7C809 /* FunctionSelectionItemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B294DFA32833196B00C7C809 /* FunctionSelectionItemButton.swift */; };
+		B294DFA628331F8300C7C809 /* CurrentLocationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B294DFA528331F8300C7C809 /* CurrentLocationButton.swift */; };
+		B294DFA82833211D00C7C809 /* RequestViaTwitterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B294DFA72833211D00C7C809 /* RequestViaTwitterButton.swift */; };
 		B2981488282DAF2200A3D0C3 /* ChildDevelopmentSupport.json in Resources */ = {isa = PBXBuildFile; fileRef = B2981487282DAF2200A3D0C3 /* ChildDevelopmentSupport.json */; };
 		B298148E282DCAB500A3D0C3 /* DecoderFacliityInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B298148D282DCAB500A3D0C3 /* DecoderFacliityInformation.swift */; };
 		B2981492282DD52300A3D0C3 /* Prefecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2981491282DD52300A3D0C3 /* Prefecture.swift */; };
@@ -32,6 +38,12 @@
 		B2916E8B282EFBCF006134BE /* WebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
 		B2916E8D282EFBDC006134BE /* WebView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WebView.storyboard; sourceTree = "<group>"; };
 		B2916E90282EFCAF006134BE /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		B294DF902833103E00C7C809 /* PasteboardFormatterFacilityInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteboardFormatterFacilityInformation.swift; sourceTree = "<group>"; };
+		B294DF9C2833178400C7C809 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		B294DF9E283317AB00C7C809 /* UIAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
+		B294DFA32833196B00C7C809 /* FunctionSelectionItemButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunctionSelectionItemButton.swift; sourceTree = "<group>"; };
+		B294DFA528331F8300C7C809 /* CurrentLocationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationButton.swift; sourceTree = "<group>"; };
+		B294DFA72833211D00C7C809 /* RequestViaTwitterButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestViaTwitterButton.swift; sourceTree = "<group>"; };
 		B2981487282DAF2200A3D0C3 /* ChildDevelopmentSupport.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ChildDevelopmentSupport.json; sourceTree = "<group>"; };
 		B298148D282DCAB500A3D0C3 /* DecoderFacliityInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecoderFacliityInformation.swift; sourceTree = "<group>"; };
 		B2981491282DD52300A3D0C3 /* Prefecture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prefecture.swift; sourceTree = "<group>"; };
@@ -81,6 +93,50 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B294DF94283315CF00C7C809 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				B294DFA32833196B00C7C809 /* FunctionSelectionItemButton.swift */,
+				B294DFA528331F8300C7C809 /* CurrentLocationButton.swift */,
+				B294DFA72833211D00C7C809 /* RequestViaTwitterButton.swift */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		B294DF96283315EF00C7C809 /* Formatter */ = {
+			isa = PBXGroup;
+			children = (
+				B294DF902833103E00C7C809 /* PasteboardFormatterFacilityInformation.swift */,
+			);
+			path = Formatter;
+			sourceTree = "<group>";
+		};
+		B294DFA0283317DC00C7C809 /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				B294DF9C2833178400C7C809 /* Colors.swift */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
+		B294DFA1283317E900C7C809 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				B294DF9E283317AB00C7C809 /* UIAlertController.swift */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		B294DFA22833180E00C7C809 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B2981491282DD52300A3D0C3 /* Prefecture.swift */,
+				B2A945E7282C6C5A0001B737 /* FacilityInformation.swift */,
+				B2981493282DD87A00A3D0C3 /* PrefectureRepository.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		B2981489282DB07000A3D0C3 /* CSV */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,9 +177,11 @@
 			children = (
 				B2A945D1282C6B810001B737 /* AppDelegate.swift */,
 				B2A945D3282C6B810001B737 /* SceneDelegate.swift */,
-				B2A945E7282C6C5A0001B737 /* FacilityInformation.swift */,
-				B2981493282DD87A00A3D0C3 /* PrefectureRepository.swift */,
-				B2981491282DD52300A3D0C3 /* Prefecture.swift */,
+				B294DFA22833180E00C7C809 /* Models */,
+				B294DFA1283317E900C7C809 /* Alert */,
+				B294DFA0283317DC00C7C809 /* Color */,
+				B294DF96283315EF00C7C809 /* Formatter */,
+				B294DF94283315CF00C7C809 /* UIComponents */,
 				B2981489282DB07000A3D0C3 /* CSV */,
 				B298148A282DB09300A3D0C3 /* Json */,
 				B2B85F03282D44B70065E12E /* Initial */,
@@ -173,6 +231,7 @@
 				B2A945CA282C6B810001B737 /* Sources */,
 				B2A945CB282C6B810001B737 /* Frameworks */,
 				B2A945CC282C6B810001B737 /* Resources */,
+				B294DF8F2832E8FB00C7C809 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -234,21 +293,47 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B294DF8F2832E8FB00C7C809 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B2A945CA282C6B810001B737 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B294DFA82833211D00C7C809 /* RequestViaTwitterButton.swift in Sources */,
 				B2916E8C282EFBCF006134BE /* WebViewViewController.swift in Sources */,
+				B294DFA628331F8300C7C809 /* CurrentLocationButton.swift in Sources */,
+				B294DF9D2833178400C7C809 /* Colors.swift in Sources */,
 				B2981492282DD52300A3D0C3 /* Prefecture.swift in Sources */,
 				B2A945EA282C6D560001B737 /* CSVConversion.swift in Sources */,
 				B2B85EFE282D43580065E12E /* MapViewController.swift in Sources */,
 				B2981494282DD87A00A3D0C3 /* PrefectureRepository.swift in Sources */,
 				B298148E282DCAB500A3D0C3 /* DecoderFacliityInformation.swift in Sources */,
 				B2A945D2282C6B810001B737 /* AppDelegate.swift in Sources */,
+				B294DF912833103E00C7C809 /* PasteboardFormatterFacilityInformation.swift in Sources */,
 				B2A945D4282C6B810001B737 /* SceneDelegate.swift in Sources */,
 				B2B85F00282D43630065E12E /* SettingViewController.swift in Sources */,
 				B2A945E8282C6C5A0001B737 /* FacilityInformation.swift in Sources */,
+				B294DF9F283317AB00C7C809 /* UIAlertController.swift in Sources */,
+				B294DFA42833196B00C7C809 /* FunctionSelectionItemButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,7 +497,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -440,7 +525,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

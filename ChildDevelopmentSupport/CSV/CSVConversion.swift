@@ -7,18 +7,19 @@
 
 import Foundation
 
-
 struct CSVConversion {
-    static func convertFacilityInformationFromCsv() -> [FacilityInformation]{
+    static func convertFacilityInformationFromCsv() -> [FacilityInformation] {
         var csvLineOneDimensional: [String] = []
         var csvLineTwoDimensional: [[String]] = []
         var pediatricWelfareServices: [FacilityInformation] = []
-        
-        guard let path = Bundle.main.path(forResource:"ChildDevelopmentSupport", ofType:"csv") else {
+        guard let path = Bundle.main.path(
+            forResource: "ChildDevelopmentSupport",
+            ofType: "csv"
+        ) else {
             print("csvファイルがないよ")
             return []
         }
-        let csvString = try! String(contentsOfFile: path,encoding: String.Encoding.utf8)
+        let csvString = try! String(contentsOfFile: path, encoding: String.Encoding.utf8)
         csvLineOneDimensional = csvString.components(separatedBy: "\r\n")
         // 一次元配列のString型を、二次元配列のString型へ変換
         csvLineOneDimensional.forEach { string in
@@ -43,7 +44,6 @@ struct CSVConversion {
                 address: array[15] + array[16],
                 latitude: array[20],
                 longitude: array[21])
-
             pediatricWelfareServices.append(pediatricWelfareService)
         }
         return pediatricWelfareServices
