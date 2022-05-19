@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B254D7092836E26D00720231 /* CSVsyurousien.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254D7082836E26D00720231 /* CSVsyurousien.swift */; };
+		B254D70B2836EBF900720231 /* syurousien.csv in Resources */ = {isa = PBXBuildFile; fileRef = B254D70A2836EBF900720231 /* syurousien.csv */; };
 		B2916E8C282EFBCF006134BE /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2916E8B282EFBCF006134BE /* WebViewViewController.swift */; };
 		B2916E8E282EFBDC006134BE /* WebView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2916E8D282EFBDC006134BE /* WebView.storyboard */; };
 		B2916E91282EFCAF006134BE /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2916E90282EFCAF006134BE /* WebKit.framework */; };
@@ -35,6 +37,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B254D7082836E26D00720231 /* CSVsyurousien.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVsyurousien.swift; sourceTree = "<group>"; };
+		B254D70A2836EBF900720231 /* syurousien.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = syurousien.csv; path = ../../../../../syurousien.csv; sourceTree = "<group>"; };
 		B2916E8B282EFBCF006134BE /* WebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
 		B2916E8D282EFBDC006134BE /* WebView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WebView.storyboard; sourceTree = "<group>"; };
 		B2916E90282EFCAF006134BE /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
@@ -76,6 +80,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B254D7072836E23900720231 /* syurousien */ = {
+			isa = PBXGroup;
+			children = (
+				B254D70A2836EBF900720231 /* syurousien.csv */,
+				B254D7082836E26D00720231 /* CSVsyurousien.swift */,
+			);
+			path = syurousien;
+			sourceTree = "<group>";
+		};
 		B2916E8A282EFBA5006134BE /* WebView */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +153,7 @@
 		B2981489282DB07000A3D0C3 /* CSV */ = {
 			isa = PBXGroup;
 			children = (
+				B254D7072836E23900720231 /* syurousien */,
 				B2A945E9282C6D560001B737 /* CSVConversion.swift */,
 				B2A945EB282C73500001B737 /* ChildDevelopmentSupport.csv */,
 			);
@@ -280,6 +294,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B254D70B2836EBF900720231 /* syurousien.csv in Resources */,
 				B2A945DE282C6B850001B737 /* LaunchScreen.storyboard in Resources */,
 				B2A945EC282C73510001B737 /* ChildDevelopmentSupport.csv in Resources */,
 				B2916E8E282EFBDC006134BE /* WebView.storyboard in Resources */,
@@ -320,6 +335,7 @@
 			files = (
 				B294DFA82833211D00C7C809 /* RequestViaTwitterButton.swift in Sources */,
 				B2916E8C282EFBCF006134BE /* WebViewViewController.swift in Sources */,
+				B254D7092836E26D00720231 /* CSVsyurousien.swift in Sources */,
 				B294DFA628331F8300C7C809 /* CurrentLocationButton.swift in Sources */,
 				B294DF9D2833178400C7C809 /* Colors.swift in Sources */,
 				B2981492282DD52300A3D0C3 /* Prefecture.swift in Sources */,
@@ -483,6 +499,8 @@
 				DEVELOPMENT_TEAM = DJ7VR35KC8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ChildDevelopmentSupport/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "発達支援MAP";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "近くの事業所を検索するために、あなたの位置情報を使用します。";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -511,6 +529,8 @@
 				DEVELOPMENT_TEAM = DJ7VR35KC8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ChildDevelopmentSupport/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "発達支援MAP";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "近くの事業所を検索するために、あなたの位置情報を使用します。";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

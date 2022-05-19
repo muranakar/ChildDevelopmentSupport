@@ -11,7 +11,7 @@
         <!--設定-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="SettingViewController" customModule="ChildDevelopmentSupport" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Y6W-OH-hqX" customClass="SettingViewController" customModule="ChildDevelopmentSupport" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -85,7 +85,7 @@
     </scenes>
     <designables>
         <designable name="YW0-ke-dZT">
-            <size key="intrinsicContentSize" width="67" height="31"/>
+            <size key="intrinsicContentSize" width="130" height="60"/>
         </designable>
         <designable name="hLb-Vi-LaZ">
             <size key="intrinsicContentSize" width="124" height="31"/>

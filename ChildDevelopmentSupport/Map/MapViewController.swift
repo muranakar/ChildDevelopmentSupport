@@ -103,8 +103,8 @@ class MapViewController: UIViewController {
     }
 
     private func geocodingAddressAndAppendAnnotation(facilityInformation: FacilityInformation) {
-        let lat = Double(facilityInformation.latitude)!
-        let lng = Double(facilityInformation.longitude)!
+        guard let lat = Double(facilityInformation.latitude) else { return }
+        guard let lng = Double(facilityInformation.longitude) else { return }
         let annotation = MKPointAnnotation()
         annotation.coordinate = CLLocationCoordinate2DMake(lat, lng)
         annotation.title = "\(facilityInformation.officeName)"
