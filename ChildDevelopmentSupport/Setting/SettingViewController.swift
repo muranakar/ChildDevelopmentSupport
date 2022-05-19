@@ -25,6 +25,14 @@ class SettingViewController: UIViewController {
             UIApplication.shared.open(settingsUrl, completionHandler: nil)
         }
     }
+
+    @IBAction private func jumpToTwitter(_ sender: Any) {
+        let url = NSURL(string: "https://twitter.com/iOS76923384")
+        if UIApplication.shared.canOpenURL(url! as URL) {
+            UIApplication.shared.open(url! as URL, options: [:], completionHandler: nil)
+        }
+    }
+
     private func selectRowPrefecturePickerView() {
         guard let loadedPrefecture = prefectureRepository.load() else { return }
         let prefectureRow = pickerViewItems.firstIndex(of: loadedPrefecture.nameWithSuffix)

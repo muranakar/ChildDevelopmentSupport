@@ -47,8 +47,8 @@ class MapViewController: UIViewController {
     }
     @IBAction private func coreLocation(_ sender: Any) {
         guard let current = locationManager.location.self else {
-            // TODO: 位置情報の設定をしてください　、アラートを表示。
-            // TODO: アラート後に位置情報設定画面に飛ぶ。
+            // 位置情報の設定をしてください　、アラートを表示。
+            // アラート後に位置情報設定画面に飛ぶ。
             present(
                 UIAlertController.configureLocationSetting {
                     guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else { return }
@@ -65,7 +65,7 @@ class MapViewController: UIViewController {
     @IBAction private func copyFacilityInformation(_ sender: Any) {
         let pastboardFormatter = PasteboardFormatterFacilityInformation()
         guard let selectedFacilityInformation = selectedFacilityInformation else {
-            // TODO: アノテーションが選択されていない　とアラート表示
+            // アノテーションが選択されていない　とアラート表示
             present(
                 UIAlertController.checkIsSelectedAnnotation(),
                 animated: true
@@ -73,7 +73,7 @@ class MapViewController: UIViewController {
             return
         }
         UIPasteboard.general.string = pastboardFormatter.string(from: selectedFacilityInformation)
-        // TODO: コピーが完了した　とアラート表示
+        // コピーが完了した　とアラート表示
         present(
             UIAlertController.copyingCompletedFacilityInformation(),
             animated: true
@@ -158,7 +158,16 @@ extension MapViewController: MKMapViewDelegate {
 }
 
 extension MapViewController: CLLocationManagerDelegate {
-    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+//        switch status {
+//        case .notDetermined, .restricted, .denied:
+//            let tokyoLocation = CLLocation(latitude: 35.6809591, longitude: 139.7673068)
+//            updateReducedMap(currentLocation: tokyoLocation)
+//        case .authorizedAlways, .authorizedWhenInUse:
+//            setupLococationManager()
+//        @unknown default:
+//         break
+//        }
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
