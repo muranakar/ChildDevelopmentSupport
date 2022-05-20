@@ -2,7 +2,7 @@
 //  UIAlertController.swift
 //  TimerAssessment
 //
-//  Created by Takehito Koshimizu on 2022/02/20.
+//  Created by Ryo Muranaka on 2022/02/20.
 //
 
 import UIKit

@@ -23,6 +23,20 @@ class WebViewViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         webView.allowsBackForwardNavigationGestures = true
+        serchOfficeURLOrCorporateURLOrGoogle()
+    }
+
+    @IBAction private func goBackWebView(_ sender: Any) {
+        webView.goBack()
+    }
+    @IBAction private func goForwardWebView(_ sender: Any) {
+        webView.goForward()
+    }
+    @IBAction private func serchGoogle(_ sender: Any) {
+        serchGoogleByOfficeName()
+    }
+
+    private func serchOfficeURLOrCorporateURLOrGoogle() {
         let url: URL?
         if facilityInformation.officeURL != "" {
             let urlString = facilityInformation.officeURL
@@ -42,18 +56,13 @@ class WebViewViewController: UIViewController {
         webView.load(myRequest)
     }
 
-    @IBAction private func goBackWebView(_ sender: Any) {
-        webView.goBack()
-    }
-    @IBAction private func goForwardWebView(_ sender: Any) {
-        webView.goForward()
-    }
-    @IBAction private func serchGoogle(_ sender: Any) {
+    private func serchGoogleByOfficeName() {
         let url: URL?
         let urlString = "https://www.google.co.jp/search?q=\(facilityInformation.officeName)"
-        let encodingString = urlString.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)
+        let encodingString = urlString.addingPercentEncoding(
+            withAllowedCharacters: NSCharacterSet.urlQueryAllowed
+        )
         url = URL(string: encodingString!)
-        print("https://www.google.co.jp/search?q=\(facilityInformation.officeName)")
         let myRequest = URLRequest(url: url!)
         webView.load(myRequest)
     }

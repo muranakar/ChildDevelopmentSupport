@@ -62,32 +62,30 @@ class MapViewController: UIViewController {
         updateReducedMap(currentLocation: current)
     }
 
+    @IBAction private func callTelephoneNumber(_ sender: Any) {
+        guard let selectedFacilityInformation = selectedFacilityInformation else { return }
+        let phoneNumber = "\(selectedFacilityInformation.officeTelephoneNumber)"
+            guard let url = URL(string: "tel://" + phoneNumber) else { return }
+            UIApplication.shared.open(url)
+    }
+
     @IBAction private func copyFacilityInformation(_ sender: Any) {
         let pastboardFormatter = PasteboardFormatterFacilityInformation()
         guard let selectedFacilityInformation = selectedFacilityInformation else {
             // アノテーションが選択されていない　とアラート表示
-            present(
-                UIAlertController.checkIsSelectedAnnotation(),
-                animated: true
-            )
+            present(UIAlertController.checkIsSelectedAnnotation(), animated: true)
             return
         }
         UIPasteboard.general.string = pastboardFormatter.string(from: selectedFacilityInformation)
         // コピーが完了した　とアラート表示
-        present(
-            UIAlertController.copyingCompletedFacilityInformation(),
-            animated: true
-        )
+        present(UIAlertController.copyingCompletedFacilityInformation(), animated: true)
     }
 
     @IBAction private func searchFacilityInformation(_ sender: Any) {
-        if selectedFacilityInformation != nil {
-            performSegue(withIdentifier: "webView", sender: sender)
+        if selectedFacilityInformation == nil {
+            present(UIAlertController.checkIsSelectedAnnotation(), animated: true)
         } else {
-            present(
-                UIAlertController.checkIsSelectedAnnotation(),
-                animated: true
-            )
+            performSegue(withIdentifier: "webView", sender: sender)
         }
     }
     private func filterFacilityInformationAndAddAnnotations(prefecture: JapanesePrefecture) {
@@ -103,6 +101,7 @@ class MapViewController: UIViewController {
     }
 
     private func geocodingAddressAndAppendAnnotation(facilityInformation: FacilityInformation) {
+        // 緯度経度の数値がnilの場合は、Map上に反映されないため、注意必要。
         guard let lat = Double(facilityInformation.latitude) else { return }
         guard let lng = Double(facilityInformation.longitude) else { return }
         let annotation = MKPointAnnotation()
@@ -140,17 +139,17 @@ extension MapViewController: MKMapViewDelegate {
         guard let annotation = view.annotation else { return }
         guard let annotationTitle = annotation.title else { return }
         guard let annotationSubTitle = annotation.subtitle else { return }
+
+        // すべてのFacilityInformationから、officeName,adressが一致する、一つのFacilityInformationを抽出
         guard let filterFacilityInformation =
                 facilityInformations
             .filter({ $0.officeName == annotationTitle })
             .filter({ $0.address == annotationSubTitle })
             .first else { return }
+
         guard let lat = Double(filterFacilityInformation.latitude),
               let lon = Double(filterFacilityInformation.longitude) else { return }
-        let location = CLLocation(
-            latitude: lat,
-            longitude: lon
-        )
+        let location = CLLocation(latitude: lat, longitude: lon)
         updateEnlargedMap(currentLocation: location)
         selectedFacilityInformation = filterFacilityInformation
         configureViewLabel()
@@ -171,7 +170,7 @@ extension MapViewController: CLLocationManagerDelegate {
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.first else { return print("位置情報なし") }
+        guard let location = locations.first else { return }
         updateReducedMap(currentLocation: location)
         locationManager.stopUpdatingLocation()
     }
@@ -187,7 +186,8 @@ extension MapViewController: CLLocationManagerDelegate {
         if let loadPrefecture = prefectureRepository.load() {
             prefecture = loadPrefecture
         } else {
-            // 最初の起動時は、都道府県の保存データがない場合は、東京を指定している。
+            // 最初の起動時は、都道府県の保存データがない場合は、東京を保存。
+            prefectureRepository.save(prefecture: .tokyo)
             prefecture = .tokyo
         }
         switch locationManager.authorizationStatus {
@@ -203,7 +203,7 @@ extension MapViewController: CLLocationManagerDelegate {
         }
     }
 
-    // Mapkitで、ある一点を中心に、ズームイン・ズームアウトを行うメソッド
+    // Mapkitで、ある一点を中心に、ズームインを行うメソッド
     private func updateEnlargedMap(currentLocation: CLLocation) {
         let horizontalRegionInMeters: Double = 2000
         let width = mapView.frame.width
@@ -216,6 +216,7 @@ extension MapViewController: CLLocationManagerDelegate {
         )
         mapView.setRegion(region, animated: true)
     }
+    // Mapkitで、ある一点を中心に、ズームインを行うメソッド
     private func updateReducedMap(currentLocation: CLLocation) {
         let horizontalRegionInMeters: Double = 12500
         let width = mapView.frame.width
