@@ -31,6 +31,7 @@ struct UseCaseCsvConversion {
         // 二次元配列のString型を、共通型に変換
         csvLineTwoDimensional.forEach { array in
             let pediatricWelfareService = FacilityInformation(
+                serviceType: array[11],
                 corporateName: array[3],
                 corporateKana: array[4],
                 corporateURL: array[10],

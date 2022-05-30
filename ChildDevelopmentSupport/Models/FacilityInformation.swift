@@ -8,6 +8,7 @@
 import Foundation
 
 struct FacilityInformation {
+    let serviceType: String
     let corporateName: String
     let corporateKana: String
     let corporateURL: String

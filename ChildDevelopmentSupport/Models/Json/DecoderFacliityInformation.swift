@@ -52,6 +52,7 @@ struct DecoderFacilityInformation {
 }
 
 struct DecodableFacilityInformation: Decodable {
+    let serviceType: String
     let corporateName: String
     let corporateKana: String
     let corporateURL: String
@@ -68,6 +69,7 @@ struct DecodableFacilityInformation: Decodable {
     let longitude: String
 
     private enum CodingKeys: String, CodingKey {
+        case serviceType = "Service_Type"
         case corporateName = "Name_of_corporation"
         case corporateKana = "Corporate_name_Kana"
         case corporateURL = "Corporation_URL"
@@ -87,6 +89,7 @@ struct DecodableFacilityInformation: Decodable {
 
 private extension FacilityInformation {
     init(decoder: DecodableFacilityInformation) {
+        serviceType = decoder.serviceType
         corporateName = decoder.corporateName
         corporateKana = decoder.corporateKana
         corporateURL = decoder.corporateURL
