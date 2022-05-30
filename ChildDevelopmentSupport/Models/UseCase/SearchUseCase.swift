@@ -17,10 +17,10 @@ struct UseCaseSearch {
         switch filterSearch {
         case .officeNameAndOfficeNameKana:
             filterFacilityInformation = allFacilityInformation
-                .filter { $0.corporateName.contains(string) || $0.corporateKana.contains(string) }
+                .filter { $0.officeName.contains(string) || $0.officeNameKana.contains(string) }
         case .corporateNameAndCoporateKana:
             filterFacilityInformation = allFacilityInformation
-                .filter { $0.officeName.contains(string) || $0.officeNameKana.contains(string) }
+                .filter { $0.corporateName.contains(string) || $0.corporateKana.contains(string) }
         case .address:
             filterFacilityInformation = allFacilityInformation
                 .filter { $0.address.contains(string) }
