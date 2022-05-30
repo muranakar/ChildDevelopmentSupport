@@ -111,7 +111,6 @@
 		B2381DF92844412A00A9A9C7 /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
-				B2A945EB282C73500001B737 /* ChildDevelopmentSupport.csv */,
 				B2381DFA2844414000A9A9C7 /* SearchUseCase.swift */,
 				B2A945E9282C6D560001B737 /* UseCaseCsvConversion.swift */,
 			);
@@ -194,6 +193,7 @@
 		B2981489282DB07000A3D0C3 /* CSV */ = {
 			isa = PBXGroup;
 			children = (
+				B2A945EB282C73500001B737 /* ChildDevelopmentSupport.csv */,
 				B254D7072836E23900720231 /* syurousien */,
 			);
 			path = CSV;
