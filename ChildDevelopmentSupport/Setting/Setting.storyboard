@@ -17,13 +17,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="都道府県を選択してください" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YUq-6e-GZK">
-                                <rect key="frame" x="10" y="124" width="394" height="21"/>
+                                <rect key="frame" x="10" y="84" width="394" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qXb-gY-pQp">
-                                <rect key="frame" x="0.0" y="175" width="414" height="150"/>
+                                <rect key="frame" x="0.0" y="125" width="414" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="hmT-kG-JNq"/>
                                 </constraints>
@@ -33,7 +33,7 @@
                                 </connections>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hLb-Vi-LaZ" customClass="FunctionSelectionItemButton" customModule="ChildDevelopmentSupport">
-                                <rect key="frame" x="132" y="375" width="150" height="50"/>
+                                <rect key="frame" x="132" y="325" width="150" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="NuH-37-Y4y"/>
                                     <constraint firstAttribute="height" constant="50" id="lAu-hh-eDn"/>
@@ -67,10 +67,10 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="YUq-6e-GZK" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="80" id="25k-kL-Eay"/>
+                            <constraint firstItem="YUq-6e-GZK" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="40" id="25k-kL-Eay"/>
                             <constraint firstItem="qXb-gY-pQp" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="Cq4-i8-fIl"/>
                             <constraint firstItem="hLb-Vi-LaZ" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Hsn-Tt-ntt"/>
-                            <constraint firstItem="qXb-gY-pQp" firstAttribute="top" secondItem="YUq-6e-GZK" secondAttribute="bottom" constant="30" id="KbE-SY-hAH"/>
+                            <constraint firstItem="qXb-gY-pQp" firstAttribute="top" secondItem="YUq-6e-GZK" secondAttribute="bottom" constant="20" id="KbE-SY-hAH"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="YUq-6e-GZK" secondAttribute="trailing" constant="10" id="Kcb-Kf-PRu"/>
                             <constraint firstItem="eoJ-n8-iB4" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="QmN-Vk-RYi"/>
                             <constraint firstItem="hLb-Vi-LaZ" firstAttribute="top" secondItem="qXb-gY-pQp" secondAttribute="bottom" constant="50" id="SKv-E2-mbp"/>
