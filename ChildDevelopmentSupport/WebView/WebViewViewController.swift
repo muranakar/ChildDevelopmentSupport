@@ -7,9 +7,12 @@
 
 import UIKit
 import WebKit
+import GoogleMobileAds
 
 class WebViewViewController: UIViewController {
     @IBOutlet weak private var webView: WKWebView!
+    //　広告
+    @IBOutlet weak private var bannerView: GADBannerView!  // 追加したUIViewを接続
     private var facilityInformation: FacilityInformation
     required init?(coder: NSCoder, facilityInformation: FacilityInformation) {
         self.facilityInformation = facilityInformation
@@ -24,6 +27,7 @@ class WebViewViewController: UIViewController {
         super.viewDidLoad()
         webView.allowsBackForwardNavigationGestures = true
         serchOfficeURLOrCorporateURLOrGoogle()
+        configureAdBannar()
     }
 
     @IBAction private func goBackWebView(_ sender: Any) {
@@ -65,5 +69,14 @@ class WebViewViewController: UIViewController {
         url = URL(string: encodingString!)
         let myRequest = URLRequest(url: url!)
         webView.load(myRequest)
+    }
+
+    private func configureAdBannar() {
+        // GADBannerViewのプロパティを設定
+        bannerView.adUnitID = "\(GoogleAdID.bannerID)"
+         bannerView.rootViewController = self
+
+         // 広告読み込み
+         bannerView.load(GADRequest())
     }
 }

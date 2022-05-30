@@ -18,13 +18,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ayj-MI-RPd">
-                                <rect key="frame" x="0.0" y="44" width="414" height="589"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="539"/>
                                 <connections>
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="fHf-aS-adD"/>
                                 </connections>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xm6-Pq-9NR" customClass="CurrentLocationButton" customModule="ChildDevelopmentSupport">
-                                <rect key="frame" x="274" y="573" width="120" height="40"/>
+                                <rect key="frame" x="274" y="523" width="120" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="gi2-dY-QHc"/>
                                     <constraint firstAttribute="width" constant="120" id="kC6-KG-f8s"/>
@@ -38,19 +38,19 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="事業所名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0bB-o1-BpA">
-                                <rect key="frame" x="20" y="653" width="69.5" height="20.5"/>
+                                <rect key="frame" x="20" y="603" width="69.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PkR-2U-sfA">
-                                <rect key="frame" x="20" y="683.5" width="37.5" height="18"/>
+                                <rect key="frame" x="20" y="633.5" width="37.5" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="hvt-Vv-zTf">
-                                <rect key="frame" x="20" y="721.5" width="374" height="13.5"/>
+                                <rect key="frame" x="20" y="671.5" width="374" height="13.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="FrB-oL-kru">
                                         <rect key="frame" x="0.0" y="0.0" width="144" height="13.5"/>
@@ -93,7 +93,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Iax-wx-Zfe">
-                                <rect key="frame" x="20" y="755" width="374" height="40"/>
+                                <rect key="frame" x="20" y="705" width="374" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bok-97-xyR" customClass="FunctionSelectionItemButton" customModule="ChildDevelopmentSupport">
                                         <rect key="frame" x="0.0" y="0.0" width="179" height="40"/>
@@ -116,22 +116,32 @@
                                     <constraint firstAttribute="height" constant="40" id="f7u-V4-3G2"/>
                                 </constraints>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oPK-C6-PrT" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="763" width="414" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="YNj-mk-Avq"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="PkR-2U-sfA" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="CRq-Nh-Fa4"/>
                             <constraint firstItem="Xm6-Pq-9NR" firstAttribute="top" secondItem="Ayj-MI-RPd" secondAttribute="bottom" constant="-60" id="FO9-aT-TMg"/>
+                            <constraint firstItem="oPK-C6-PrT" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="FOM-Rg-9Iy"/>
                             <constraint firstItem="0bB-o1-BpA" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="HuZ-Eb-FyX"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="hvt-Vv-zTf" secondAttribute="trailing" constant="20" id="KZd-eX-gzR"/>
                             <constraint firstItem="hvt-Vv-zTf" firstAttribute="top" secondItem="PkR-2U-sfA" secondAttribute="bottom" constant="20" id="NZz-DF-0Cg"/>
                             <constraint firstItem="Iax-wx-Zfe" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="PBa-kD-FI3"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Iax-wx-Zfe" secondAttribute="trailing" constant="20" id="ROg-95-FWx"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Ayj-MI-RPd" secondAttribute="bottom" constant="180" id="UVG-g8-v9l"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Ayj-MI-RPd" secondAttribute="bottom" constant="230" id="UVG-g8-v9l"/>
                             <constraint firstItem="0bB-o1-BpA" firstAttribute="top" secondItem="Ayj-MI-RPd" secondAttribute="bottom" constant="20" id="WSf-E9-dvS"/>
                             <constraint firstItem="Iax-wx-Zfe" firstAttribute="top" secondItem="hvt-Vv-zTf" secondAttribute="bottom" constant="20" id="WfT-KN-5Rp"/>
                             <constraint firstItem="hvt-Vv-zTf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="WsZ-za-Qsr"/>
+                            <constraint firstItem="oPK-C6-PrT" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="YCe-i0-axv"/>
                             <constraint firstItem="Ayj-MI-RPd" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="ZvQ-A0-QeF"/>
+                            <constraint firstItem="oPK-C6-PrT" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="epp-4L-KUF"/>
                             <constraint firstItem="Ayj-MI-RPd" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="hV7-SR-5iD"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Xm6-Pq-9NR" secondAttribute="trailing" constant="20" id="liD-ge-uMY"/>
                             <constraint firstItem="PkR-2U-sfA" firstAttribute="top" secondItem="0bB-o1-BpA" secondAttribute="bottom" constant="10" id="tF7-wa-jcv"/>
@@ -141,6 +151,7 @@
                     <tabBarItem key="tabBarItem" title="地図" image="map" catalog="system" id="EWs-a0-bMG"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="bannerView" destination="oPK-C6-PrT" id="xW2-Ql-7v5"/>
                         <outlet property="facilityInformationFaxLabel" destination="jIC-Tg-9Gz" id="RPj-SM-GdX"/>
                         <outlet property="facilityInformationNameLabel" destination="PkR-2U-sfA" id="pNi-In-7fl"/>
                         <outlet property="facilityInformationTelLabel" destination="R2w-at-xwj" id="euM-20-rSC"/>

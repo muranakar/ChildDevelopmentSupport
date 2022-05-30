@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1208988BA197A3B28E2F07EE /* Pods_ChildDevelopmentSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63F6E0983C062372463F4FED /* Pods_ChildDevelopmentSupport.framework */; };
+		B2381DF7284433D100A9A9C7 /* GoogleAdID.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2381DF6284433D100A9A9C7 /* GoogleAdID.swift */; };
 		B254D7092836E26D00720231 /* CSVsyurousien.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254D7082836E26D00720231 /* CSVsyurousien.swift */; };
 		B254D70B2836EBF900720231 /* syurousien.csv in Resources */ = {isa = PBXBuildFile; fileRef = B254D70A2836EBF900720231 /* syurousien.csv */; };
 		B2916E8C282EFBCF006134BE /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2916E8B282EFBCF006134BE /* WebViewViewController.swift */; };
@@ -43,6 +44,7 @@
 		63F6E0983C062372463F4FED /* Pods_ChildDevelopmentSupport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChildDevelopmentSupport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E99299D0DA8444AC3F0D09F /* Pods-ChildDevelopmentSupport.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChildDevelopmentSupport.debug.xcconfig"; path = "Target Support Files/Pods-ChildDevelopmentSupport/Pods-ChildDevelopmentSupport.debug.xcconfig"; sourceTree = "<group>"; };
 		AE404B96B74696F554C5D796 /* Pods-ChildDevelopmentSupport.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChildDevelopmentSupport.release.xcconfig"; path = "Target Support Files/Pods-ChildDevelopmentSupport/Pods-ChildDevelopmentSupport.release.xcconfig"; sourceTree = "<group>"; };
+		B2381DF6284433D100A9A9C7 /* GoogleAdID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAdID.swift; sourceTree = "<group>"; };
 		B254D7082836E26D00720231 /* CSVsyurousien.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVsyurousien.swift; sourceTree = "<group>"; };
 		B254D70A2836EBF900720231 /* syurousien.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = syurousien.csv; path = ../../../../../syurousien.csv; sourceTree = "<group>"; };
 		B2916E8B282EFBCF006134BE /* WebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
@@ -95,8 +97,15 @@
 				9E99299D0DA8444AC3F0D09F /* Pods-ChildDevelopmentSupport.debug.xcconfig */,
 				AE404B96B74696F554C5D796 /* Pods-ChildDevelopmentSupport.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		B2381DF5284433B100A9A9C7 /* GoogleAd */ = {
+			isa = PBXGroup;
+			children = (
+				B2381DF6284433D100A9A9C7 /* GoogleAdID.swift */,
+			);
+			path = GoogleAd;
 			sourceTree = "<group>";
 		};
 		B254D7072836E23900720231 /* syurousien */ = {
@@ -212,6 +221,7 @@
 			children = (
 				B2A945D1282C6B810001B737 /* AppDelegate.swift */,
 				B2A945D3282C6B810001B737 /* SceneDelegate.swift */,
+				B2381DF5284433B100A9A9C7 /* GoogleAd */,
 				B294DFA22833180E00C7C809 /* Models */,
 				B294DFA1283317E900C7C809 /* Alert */,
 				B294DFA0283317DC00C7C809 /* Color */,
@@ -416,6 +426,7 @@
 				B2B85EFE282D43580065E12E /* MapViewController.swift in Sources */,
 				B2981494282DD87A00A3D0C3 /* PrefectureRepository.swift in Sources */,
 				B298148E282DCAB500A3D0C3 /* DecoderFacliityInformation.swift in Sources */,
+				B2381DF7284433D100A9A9C7 /* GoogleAdID.swift in Sources */,
 				B2A945D2282C6B810001B737 /* AppDelegate.swift in Sources */,
 				B294DF912833103E00C7C809 /* PasteboardFormatterFacilityInformation.swift in Sources */,
 				B2C2E8E828411466001A4316 /* SearchViewController.swift in Sources */,

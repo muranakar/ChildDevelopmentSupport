@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 struct CSVConversionSyurousien {
     static func convertFacilityInformationFromCsv() -> [FacilityInformation] {
         var csvLineOneDimensional: [String] = []

@@ -33,7 +33,7 @@
                                 </connections>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hLb-Vi-LaZ" customClass="FunctionSelectionItemButton" customModule="ChildDevelopmentSupport">
-                                <rect key="frame" x="132" y="405" width="150" height="50"/>
+                                <rect key="frame" x="132" y="375" width="150" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="NuH-37-Y4y"/>
                                     <constraint firstAttribute="height" constant="50" id="lAu-hh-eDn"/>
@@ -45,7 +45,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YW0-ke-dZT" customClass="RequestViaTwitterButton" customModule="ChildDevelopmentSupport">
-                                <rect key="frame" x="30" y="723" width="140" height="60"/>
+                                <rect key="frame" x="30" y="673" width="140" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="FWv-x0-LDa"/>
                                     <constraint firstAttribute="width" constant="140" id="XBX-LV-PgL"/>
@@ -56,6 +56,13 @@
                                     <action selector="jumpToTwitter:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="pB7-Ag-1ib"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eoJ-n8-iB4" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="763" width="414" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="l8G-Ir-VeU"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -65,9 +72,12 @@
                             <constraint firstItem="hLb-Vi-LaZ" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Hsn-Tt-ntt"/>
                             <constraint firstItem="qXb-gY-pQp" firstAttribute="top" secondItem="YUq-6e-GZK" secondAttribute="bottom" constant="30" id="KbE-SY-hAH"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="YUq-6e-GZK" secondAttribute="trailing" constant="10" id="Kcb-Kf-PRu"/>
-                            <constraint firstItem="hLb-Vi-LaZ" firstAttribute="top" secondItem="qXb-gY-pQp" secondAttribute="bottom" constant="80" id="SKv-E2-mbp"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="YW0-ke-dZT" secondAttribute="bottom" constant="30" id="ikF-At-GuY"/>
+                            <constraint firstItem="eoJ-n8-iB4" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="QmN-Vk-RYi"/>
+                            <constraint firstItem="hLb-Vi-LaZ" firstAttribute="top" secondItem="qXb-gY-pQp" secondAttribute="bottom" constant="50" id="SKv-E2-mbp"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="YW0-ke-dZT" secondAttribute="bottom" constant="80" id="ikF-At-GuY"/>
                             <constraint firstItem="qXb-gY-pQp" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="lkx-ce-61y"/>
+                            <constraint firstItem="eoJ-n8-iB4" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="mvu-YO-Nhd"/>
+                            <constraint firstItem="eoJ-n8-iB4" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="sWx-ps-gNq"/>
                             <constraint firstItem="YUq-6e-GZK" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="tEt-hU-6gR"/>
                             <constraint firstItem="YW0-ke-dZT" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="wSu-ec-2YI"/>
                         </constraints>
@@ -75,6 +85,7 @@
                     <tabBarItem key="tabBarItem" title="設定" image="gearshape" catalog="system" id="q1b-QK-dFN"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="bannerView" destination="eoJ-n8-iB4" id="DVn-R0-k8E"/>
                         <outlet property="prefecturePickerView" destination="qXb-gY-pQp" id="rqQ-Gd-Tk9"/>
                     </connections>
                 </viewController>

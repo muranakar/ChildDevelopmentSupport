@@ -8,12 +8,15 @@
 import UIKit
 import MapKit
 import CoreLocation
+import GoogleMobileAds
 
 class MapViewController: UIViewController {
     @IBOutlet private weak var mapView: MKMapView!
     @IBOutlet weak private var facilityInformationNameLabel: UILabel!
     @IBOutlet weak private var facilityInformationTelLabel: UILabel!
     @IBOutlet weak private var facilityInformationFaxLabel: UILabel!
+    //　広告
+    @IBOutlet weak private var bannerView: GADBannerView!  // 追加したUIViewを接続
 
     private var locationManager: CLLocationManager!
     private var prefecture: JapanesePrefecture = .osaka
@@ -27,6 +30,7 @@ class MapViewController: UIViewController {
         facilityInformations = CSVConversion.convertFacilityInformationFromCsv()
         setupLococationManager()
         configureViewInitialLabel()
+        configureAdBannar()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -109,6 +113,15 @@ class MapViewController: UIViewController {
         annotation.title = "\(facilityInformation.officeName)"
         annotation.subtitle = "\(facilityInformation.address)"
         annotationArray.append(annotation)
+    }
+
+    private func configureAdBannar() {
+        // GADBannerViewのプロパティを設定
+        bannerView.adUnitID = "\(GoogleAdID.bannerID)"
+         bannerView.rootViewController = self
+
+         // 広告読み込み
+         bannerView.load(GADRequest())
     }
 
     private func configureViewLabel() {

@@ -35,7 +35,7 @@
                                 </items>
                             </toolbar>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SEm-mh-Rgz">
-                                <rect key="frame" x="0.0" y="94" width="414" height="718"/>
+                                <rect key="frame" x="0.0" y="94" width="414" height="668"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -63,14 +63,23 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wnr-nE-Pyl" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="762" width="414" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="fXZ-zS-Hco"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ykN-dT-H70" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="6AA-VF-CtJ"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="P6f-6s-RQQ" secondAttribute="trailing" constant="20" id="A2u-69-QiK"/>
-                            <constraint firstItem="P6f-6s-RQQ" firstAttribute="top" secondItem="SEm-mh-Rgz" secondAttribute="bottom" constant="10" id="ArV-LO-2jX"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="SEm-mh-Rgz" secondAttribute="bottom" constant="50" id="UGo-8i-tUh"/>
+                            <constraint firstItem="P6f-6s-RQQ" firstAttribute="top" secondItem="SEm-mh-Rgz" secondAttribute="bottom" constant="60" id="ArV-LO-2jX"/>
+                            <constraint firstItem="wnr-nE-Pyl" firstAttribute="top" secondItem="SEm-mh-Rgz" secondAttribute="bottom" id="FjO-AA-FLd"/>
+                            <constraint firstItem="wnr-nE-Pyl" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="IIr-7G-iFy"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="SEm-mh-Rgz" secondAttribute="bottom" constant="100" id="UGo-8i-tUh"/>
                             <constraint firstItem="SEm-mh-Rgz" firstAttribute="top" secondItem="ykN-dT-H70" secondAttribute="bottom" id="fr8-E8-uCb"/>
                             <constraint firstItem="SEm-mh-Rgz" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="hge-1O-H8k"/>
                             <constraint firstItem="ykN-dT-H70" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="lF0-rP-kuR"/>
@@ -78,9 +87,11 @@
                             <constraint firstItem="ykN-dT-H70" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="mv4-qn-v9Y"/>
                             <constraint firstItem="P6f-6s-RQQ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="ndo-Lg-kxf"/>
                             <constraint firstItem="SEm-mh-Rgz" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="rLa-dt-8IQ"/>
+                            <constraint firstItem="wnr-nE-Pyl" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="v6Q-3Y-5Hn"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bannerView" destination="wnr-nE-Pyl" id="ShK-rV-uQJ"/>
                         <outlet property="webView" destination="SEm-mh-Rgz" id="54t-Y2-Tpx"/>
                     </connections>
                 </viewController>

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class SettingViewController: UIViewController {
     let pickerViewItemsOfPrefecture = JapanesePrefecture.all.map { prefecture in
@@ -14,8 +15,14 @@ class SettingViewController: UIViewController {
     let prefectureRepository = PrefectureRepository()
 
     @IBOutlet weak private var prefecturePickerView: UIPickerView!
+    @IBOutlet weak private var bannerView: GADBannerView!  // 追加したUIViewを接続
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configureAdBannar()
+    }
     override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         selectRowPrefecturePickerView()
     }
     @IBAction private func configureCoreLocation(_ sender: Any) {
@@ -45,6 +52,14 @@ class SettingViewController: UIViewController {
         if UIApplication.shared.canOpenURL(url! as URL) {
             UIApplication.shared.open(url! as URL, options: [:], completionHandler: nil)
         }
+    }
+    private func configureAdBannar() {
+        // GADBannerViewのプロパティを設定
+        bannerView.adUnitID = "\(GoogleAdID.bannerID)"
+        bannerView.rootViewController = self
+
+        // 広告読み込み
+        bannerView.load(GADRequest())
     }
 }
 

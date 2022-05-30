@@ -6,24 +6,37 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class SearchViewController: UIViewController {
+    @IBOutlet weak  var categorySegumentControl: UISegmentedControl!
+    @IBOutlet weak var searcdBar: UISearchBar!
+    @IBOutlet weak var tableView: UITableView!
 
+    @IBOutlet weak private var bannerView: GADBannerView!  // 追加したUIViewを接続
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        configureAdBannar()
     }
-    
+    private func configureAdBannar() {
+        // GADBannerViewのプロパティを設定
+        bannerView.adUnitID = "\(GoogleAdID.bannerID)"
+        bannerView.rootViewController = self
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        // 広告読み込み
+        bannerView.load(GADRequest())
     }
-    */
+}
+
+extension SearchViewController: UISearchBarDelegate {
+
+}
+
+extension SearchViewController: UITableViewDelegate {
+
+
+}
+
+extension SearchViewController: UITableViewDataSource {
 
 }
