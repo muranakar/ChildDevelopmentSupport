@@ -32,6 +32,7 @@ class SearchViewController: UIViewController {
     }
     @IBAction private func tapSegmentedControl(_ sender: Any) {
         searchAndReloadTableViewAndAnimationindicator(searchText: searchString)
+        
     }
 
     // 参考：https://www.letitride.jp/entry/2019/08/19/155333
@@ -134,6 +135,7 @@ class SearchViewController: UIViewController {
                                 // インジケーターを非表示＆アニメーション終了
                                 self?.indicator.stopAnimating()
                                 self?.tableView.reloadData()
+                                self?.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
                             }
                         }
                     }
@@ -142,6 +144,9 @@ class SearchViewController: UIViewController {
 }
 
 extension SearchViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        150
+    }
 }
 
 extension SearchViewController: UITableViewDataSource {
@@ -150,37 +155,43 @@ extension SearchViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell =
+                tableView
+            .dequeueReusableCell(
+                withIdentifier: "searchCell"
+            ) as? SearchTableViewCell else { fatalError() }
+
         switch categorySegumentControl.selectedSegmentIndex {
         case 0:
             // 事業所名
-            guard let cell =
-                    tableView
-                .dequeueReusableCell(
-                    withIdentifier: "officeName"
-                ) as? OfficeNameTableViewCell else { fatalError() }
-            cell.configure(string: filitedfacilityInformation[indexPath.row].officeName)
-            return cell
+            cell.configure(
+                firstTitle: "事業所名",
+                firstInformation: filitedfacilityInformation[indexPath.row].officeName,
+                secondTitle: "住所",
+                secondInformation: filitedfacilityInformation[indexPath.row].address
+            )
         case 1:
             // 会社名
-            guard let cell =
-                    tableView.dequeueReusableCell(
-                        withIdentifier: "corporateName"
-                    ) as? CorporateNameTableViewCell else { fatalError() }
-            cell.configure(string: filitedfacilityInformation[indexPath.row].corporateName)
-            return cell
+
+            cell.configure(
+                firstTitle: "事業所名",
+                firstInformation: filitedfacilityInformation[indexPath.row].officeName,
+                secondTitle: "会社名",
+                secondInformation: filitedfacilityInformation[indexPath.row].corporateName
+            )
         case 2:
             //　住所
-            guard let cell =
-                            tableView
-                .dequeueReusableCell(
-                    withIdentifier: "adress"
-                ) as? AdressTableViewCell else { fatalError() }
-                    cell.configure(string: filitedfacilityInformation[indexPath.row].address)
-                    return cell
 
+            cell.configure(
+                firstTitle: "事業所名",
+                firstInformation: filitedfacilityInformation[indexPath.row].officeName,
+                secondTitle: "住所",
+                secondInformation: filitedfacilityInformation[indexPath.row].address
+            )
         default:
             fatalError("segumentが選択されていません。")
         }
+        return cell
     }
 }
 
