@@ -9,9 +9,9 @@ import UIKit
 import GoogleMobileAds
 
 class SearchViewController: UIViewController {
-    @IBOutlet weak  var categorySegumentControl: UISegmentedControl!
-    @IBOutlet weak var searcdBar: UISearchBar!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak private var categorySegumentControl: UISegmentedControl!
+    @IBOutlet weak private var searcdBar: UISearchBar!
+    @IBOutlet weak private var tableView: UITableView!
 
     @IBOutlet weak private var bannerView: GADBannerView!  // 追加したUIViewを接続
     override func viewDidLoad() {
@@ -29,14 +29,7 @@ class SearchViewController: UIViewController {
 }
 
 extension SearchViewController: UISearchBarDelegate {
-
 }
 
 extension SearchViewController: UITableViewDelegate {
-
-
-}
-
-extension SearchViewController: UITableViewDataSource {
-
 }

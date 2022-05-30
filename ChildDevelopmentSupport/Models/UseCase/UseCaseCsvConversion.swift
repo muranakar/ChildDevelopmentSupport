@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CSVConversion {
+struct UseCaseCsvConversion {
     static func convertFacilityInformationFromCsv() -> [FacilityInformation] {
         var csvLineOneDimensional: [String] = []
         var csvLineTwoDimensional: [[String]] = []

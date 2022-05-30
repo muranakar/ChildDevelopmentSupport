@@ -27,7 +27,7 @@ class MapViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        facilityInformations = CSVConversion.convertFacilityInformationFromCsv()
+        facilityInformations = UseCaseCsvConversion.convertFacilityInformationFromCsv()
         setupLococationManager()
         configureViewInitialLabel()
         configureAdBannar()

@@ -40,9 +40,6 @@
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="S4N-Iw-Cxa">
                                 <rect key="frame" x="0.0" y="85" width="414" height="51"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="Lvu-hA-358"/>
-                                </connections>
                             </searchBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sTF-qB-bX0" customClass="GADBannerView">
                                 <rect key="frame" x="0.0" y="136" width="414" height="50"/>
@@ -64,10 +61,6 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="Y6W-OH-hqX" id="edl-Eo-a9L"/>
-                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="ZuN-7v-a92"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
