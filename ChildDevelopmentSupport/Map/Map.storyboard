@@ -24,9 +24,9 @@
                                 </connections>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xm6-Pq-9NR" customClass="CurrentLocationButton" customModule="ChildDevelopmentSupport">
-                                <rect key="frame" x="274" y="523" width="120" height="40"/>
+                                <rect key="frame" x="274" y="543" width="120" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="gi2-dY-QHc"/>
+                                    <constraint firstAttribute="height" constant="30" id="gi2-dY-QHc"/>
                                     <constraint firstAttribute="width" constant="120" id="kC6-KG-f8s"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
@@ -123,12 +123,35 @@
                                     <constraint firstAttribute="height" constant="50" id="YNj-mk-Avq"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sjO-eZ-kmf" customClass="PickerKeyboard" customModule="ChildDevelopmentSupport">
+                                <rect key="frame" x="137" y="54" width="140" height="40"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="56Z-cI-LC6">
+                                        <rect key="frame" x="49" y="9.5" width="42" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="jZJ-4U-lbF"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="y21-LW-HoK"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="2jv-cS-p0b"/>
+                                    <constraint firstItem="56Z-cI-LC6" firstAttribute="centerX" secondItem="sjO-eZ-kmf" secondAttribute="centerX" id="JdO-u8-FtT"/>
+                                    <constraint firstAttribute="height" constant="40" id="aHB-AU-LIs"/>
+                                    <constraint firstItem="56Z-cI-LC6" firstAttribute="centerY" secondItem="sjO-eZ-kmf" secondAttribute="centerY" id="nNG-GF-G6Z"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="sjO-eZ-kmf" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="4hd-7k-XvO"/>
                             <constraint firstItem="PkR-2U-sfA" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="CRq-Nh-Fa4"/>
-                            <constraint firstItem="Xm6-Pq-9NR" firstAttribute="top" secondItem="Ayj-MI-RPd" secondAttribute="bottom" constant="-60" id="FO9-aT-TMg"/>
+                            <constraint firstItem="Xm6-Pq-9NR" firstAttribute="top" secondItem="Ayj-MI-RPd" secondAttribute="bottom" constant="-40" id="FO9-aT-TMg"/>
                             <constraint firstItem="oPK-C6-PrT" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="FOM-Rg-9Iy"/>
                             <constraint firstItem="0bB-o1-BpA" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="HuZ-Eb-FyX"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="hvt-Vv-zTf" secondAttribute="trailing" constant="20" id="KZd-eX-gzR"/>
@@ -142,6 +165,7 @@
                             <constraint firstItem="oPK-C6-PrT" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="YCe-i0-axv"/>
                             <constraint firstItem="Ayj-MI-RPd" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="ZvQ-A0-QeF"/>
                             <constraint firstItem="oPK-C6-PrT" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="epp-4L-KUF"/>
+                            <constraint firstItem="sjO-eZ-kmf" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="ffJ-LK-gpg"/>
                             <constraint firstItem="Ayj-MI-RPd" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="hV7-SR-5iD"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Xm6-Pq-9NR" secondAttribute="trailing" constant="20" id="liD-ge-uMY"/>
                             <constraint firstItem="PkR-2U-sfA" firstAttribute="top" secondItem="0bB-o1-BpA" secondAttribute="bottom" constant="10" id="tF7-wa-jcv"/>
@@ -156,6 +180,7 @@
                         <outlet property="facilityInformationNameLabel" destination="PkR-2U-sfA" id="pNi-In-7fl"/>
                         <outlet property="facilityInformationTelLabel" destination="R2w-at-xwj" id="euM-20-rSC"/>
                         <outlet property="mapView" destination="Ayj-MI-RPd" id="QuG-ED-GRd"/>
+                        <outlet property="prefectureLabel" destination="56Z-cI-LC6" id="9j5-sk-5DL"/>
                         <segue destination="vQq-rw-HZc" kind="presentation" identifier="webView" destinationCreationSelector="makeAssessmentWithCoder:sender:segueIdentifier:" modalPresentationStyle="fullScreen" id="HH0-hj-Fcl"/>
                     </connections>
                 </viewController>

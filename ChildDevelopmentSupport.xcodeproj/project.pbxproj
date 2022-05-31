@@ -15,6 +15,7 @@
 		B2916E8C282EFBCF006134BE /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2916E8B282EFBCF006134BE /* WebViewViewController.swift */; };
 		B2916E8E282EFBDC006134BE /* WebView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2916E8D282EFBDC006134BE /* WebView.storyboard */; };
 		B2916E91282EFCAF006134BE /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2916E90282EFCAF006134BE /* WebKit.framework */; };
+		B2931C232846B45E0065A706 /* PickerKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2931C222846B45E0065A706 /* PickerKeyboard.swift */; };
 		B294DF912833103E00C7C809 /* PasteboardFormatterFacilityInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B294DF902833103E00C7C809 /* PasteboardFormatterFacilityInformation.swift */; };
 		B294DF9D2833178400C7C809 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B294DF9C2833178400C7C809 /* Colors.swift */; };
 		B294DF9F283317AB00C7C809 /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B294DF9E283317AB00C7C809 /* UIAlertController.swift */; };
@@ -52,6 +53,7 @@
 		B2916E8B282EFBCF006134BE /* WebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
 		B2916E8D282EFBDC006134BE /* WebView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WebView.storyboard; sourceTree = "<group>"; };
 		B2916E90282EFCAF006134BE /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		B2931C222846B45E0065A706 /* PickerKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerKeyboard.swift; sourceTree = "<group>"; };
 		B294DF902833103E00C7C809 /* PasteboardFormatterFacilityInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteboardFormatterFacilityInformation.swift; sourceTree = "<group>"; };
 		B294DF9C2833178400C7C809 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		B294DF9E283317AB00C7C809 /* UIAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 			children = (
 				B2B85EF9282D43400065E12E /* Map.storyboard */,
 				B2B85EFD282D43580065E12E /* MapViewController.swift */,
+				B2931C222846B45E0065A706 /* PickerKeyboard.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -446,6 +449,7 @@
 				B2B85F00282D43630065E12E /* SettingViewController.swift in Sources */,
 				B2A945E8282C6C5A0001B737 /* FacilityInformation.swift in Sources */,
 				B294DF9F283317AB00C7C809 /* UIAlertController.swift in Sources */,
+				B2931C232846B45E0065A706 /* PickerKeyboard.swift in Sources */,
 				B294DFA42833196B00C7C809 /* FunctionSelectionItemButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

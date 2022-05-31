@@ -11,7 +11,9 @@ import CoreLocation
 import GoogleMobileAds
 
 class MapViewController: UIViewController {
-    @IBOutlet private weak var mapView: MKMapView!
+
+    @IBOutlet weak private var prefectureLabel: UILabel!
+    @IBOutlet weak private var mapView: MKMapView!
     @IBOutlet weak private var facilityInformationNameLabel: UILabel!
     @IBOutlet weak private var facilityInformationTelLabel: UILabel!
     @IBOutlet weak private var facilityInformationFaxLabel: UILabel!
@@ -25,10 +27,14 @@ class MapViewController: UIViewController {
     private var annotationArray: [MKPointAnnotation] = []
     private var selectedFacilityInformation: FacilityInformation?
 
+    private let pickerView = UIPickerView()
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         facilityInformations = UseCaseCsvConversion.convertFacilityInformationFromCsv()
         setupLococationManager()
+        configurePrefectureLabel()
         configureViewInitialLabel()
         configureAdBannar()
     }
@@ -69,8 +75,8 @@ class MapViewController: UIViewController {
     @IBAction private func callTelephoneNumber(_ sender: Any) {
         guard let selectedFacilityInformation = selectedFacilityInformation else { return }
         let phoneNumber = "\(selectedFacilityInformation.officeTelephoneNumber)"
-            guard let url = URL(string: "tel://" + phoneNumber) else { return }
-            UIApplication.shared.open(url)
+        guard let url = URL(string: "tel://" + phoneNumber) else { return }
+        UIApplication.shared.open(url)
     }
 
     @IBAction private func copyFacilityInformation(_ sender: Any) {
@@ -118,12 +124,16 @@ class MapViewController: UIViewController {
     private func configureAdBannar() {
         // GADBannerViewのプロパティを設定
         bannerView.adUnitID = "\(GoogleAdID.bannerID)"
-         bannerView.rootViewController = self
+        bannerView.rootViewController = self
 
-         // 広告読み込み
-         bannerView.load(GADRequest())
+        // 広告読み込み
+        bannerView.load(GADRequest())
     }
 
+    private func configurePrefectureLabel() {
+        guard let prefecture = prefectureRepository.load() else { return }
+        prefectureLabel.text = "\(prefecture.nameWithSuffix)　表示中"
+    }
     private func configureViewLabel() {
         facilityInformationNameLabel.text = selectedFacilityInformation?.officeName
         facilityInformationTelLabel.text = selectedFacilityInformation?.officeTelephoneNumber
@@ -171,15 +181,15 @@ extension MapViewController: MKMapViewDelegate {
 
 extension MapViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-//        switch status {
-//        case .notDetermined, .restricted, .denied:
-//            let tokyoLocation = CLLocation(latitude: 35.6809591, longitude: 139.7673068)
-//            updateReducedMap(currentLocation: tokyoLocation)
-//        case .authorizedAlways, .authorizedWhenInUse:
-//            setupLococationManager()
-//        @unknown default:
-//         break
-//        }
+        //        switch status {
+        //        case .notDetermined, .restricted, .denied:
+        //            let tokyoLocation = CLLocation(latitude: 35.6809591, longitude: 139.7673068)
+        //            updateReducedMap(currentLocation: tokyoLocation)
+        //        case .authorizedAlways, .authorizedWhenInUse:
+        //            setupLococationManager()
+        //        @unknown default:
+        //         break
+        //        }
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -243,3 +253,23 @@ extension MapViewController: CLLocationManagerDelegate {
         mapView.setRegion(region, animated: true)
     }
 }
+
+//extension MapViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+//        pickerViewItemsOfPrefecture[row]
+//    }
+//
+//    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+//        let prefecture = JapanesePrefecture.all
+//            .filter { $0.nameWithSuffix == pickerViewItemsOfPrefecture[row] }.first!
+//        prefectureRepository.save(prefecture: prefecture)
+//    }
+//
+//    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+//        1
+//    }
+//
+//    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+//        pickerViewItemsOfPrefecture.count
+//    }
+//}
