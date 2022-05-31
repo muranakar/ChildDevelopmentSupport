@@ -134,8 +134,8 @@ class SearchViewController: UIViewController {
                             DispatchQueue.main.async {[weak self] in
                                 // インジケーターを非表示＆アニメーション終了
                                 self?.indicator.stopAnimating()
+                                self?.tableView.setContentOffset(.zero, animated: true)
                                 self?.tableView.reloadData()
-                                self?.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
                             }
                         }
                     }
