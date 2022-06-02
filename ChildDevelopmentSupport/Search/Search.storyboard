@@ -158,11 +158,20 @@
                         <outlet property="categorySegumentControl" destination="Do4-VU-IMv" id="qGG-tP-POR"/>
                         <outlet property="searchBar" destination="S4N-Iw-Cxa" id="py9-HW-uO9"/>
                         <outlet property="tableView" destination="t7n-M5-o3g" id="Zhq-7V-58m"/>
+                        <segue destination="RJ1-tX-phU" kind="presentation" identifier="detailSearch" destinationCreationSelector="makeDetailSearchWithCoder:sender:segueIdentifier:" modalPresentationStyle="fullScreen" id="KcN-Nd-AEp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="79.6875"/>
+        </scene>
+        <!--DetailSearch-->
+        <scene sceneID="Zs6-0V-ffD">
+            <objects>
+                <viewControllerPlaceholder storyboardName="DetailSearch" id="RJ1-tX-phU" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aLV-g4-JOG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="857" y="80"/>
         </scene>
     </scenes>
     <resources>

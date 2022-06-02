@@ -9,9 +9,9 @@ import UIKit
 
 extension UIAlertController {
     /// 事業所情報のコピーが完了しました。
-    static func copyingCompletedFacilityInformation() -> Self {
+    static func copyingCompletedFacilityInformation(message: String) -> Self {
         let title = "コピー完了"
-        let message = "事業所情報のコピーが\n完了しました。"
+        let message = "\(message)"
         let controller = self.init(title: title, message: message, preferredStyle: .alert)
         controller.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         return controller

@@ -10,12 +10,21 @@ import WebKit
 import GoogleMobileAds
 
 class WebViewViewController: UIViewController {
+    enum ShowDesignation {
+        case officeURL
+        case corporateURL
+        case mapURL
+        case noDesignation
+    }
     @IBOutlet weak private var webView: WKWebView!
     //　広告
-    @IBOutlet weak private var bannerView: GADBannerView!  // 追加したUIViewを接続
+    @IBOutlet weak private var bannerView: GADBannerView!// 追加したUIViewを接続
     private var facilityInformation: FacilityInformation
-    required init?(coder: NSCoder, facilityInformation: FacilityInformation) {
+    private var showDesignation: ShowDesignation
+
+    required init?(coder: NSCoder, facilityInformation: FacilityInformation, showDesignation: ShowDesignation) {
         self.facilityInformation = facilityInformation
+        self.showDesignation = showDesignation
         super.init(coder: coder)
     }
 
@@ -41,6 +50,7 @@ class WebViewViewController: UIViewController {
     }
 
     private func serchOfficeURLOrCorporateURLOrGoogle() {
+        // TODO: 条件分岐をする必要がある。OFFICE CORPORATE 中身が入ってない場合。　地図
         let url: URL?
         if facilityInformation.officeURL != "" {
             let urlString = facilityInformation.officeURL

@@ -11,7 +11,7 @@ import CoreLocation
 import GoogleMobileAds
 
 class MapViewController: UIViewController {
-
+    @IBOutlet weak private var pickerKeyboardView: PickerViewKeyboard!
     @IBOutlet weak private var prefectureLabel: UILabel!
     @IBOutlet weak private var mapView: MKMapView!
     @IBOutlet weak private var facilityInformationNameLabel: UILabel!
@@ -27,8 +27,9 @@ class MapViewController: UIViewController {
     private var annotationArray: [MKPointAnnotation] = []
     private var selectedFacilityInformation: FacilityInformation?
 
-    private let pickerView = UIPickerView()
-
+    let pickerViewItemsOfPrefectureNameWithSuffix = JapanesePrefecture.all.map { prefecture in
+        prefecture.nameWithSuffix
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +38,7 @@ class MapViewController: UIViewController {
         configurePrefectureLabel()
         configureViewInitialLabel()
         configureAdBannar()
+        pickerKeyboardView.delegate = self
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -88,14 +90,17 @@ class MapViewController: UIViewController {
         }
         UIPasteboard.general.string = pastboardFormatter.string(from: selectedFacilityInformation)
         // コピーが完了した　とアラート表示
-        present(UIAlertController.copyingCompletedFacilityInformation(), animated: true)
+        present(UIAlertController.copyingCompletedFacilityInformation(
+            message: "事業所情報のコピーが\n完了しました。"),
+                animated: true
+        )
     }
 
     @IBAction private func searchFacilityInformation(_ sender: Any) {
         if selectedFacilityInformation == nil {
             present(UIAlertController.checkIsSelectedAnnotation(), animated: true)
         } else {
-            performSegue(withIdentifier: "webView", sender: sender)
+            performSegue(withIdentifier: "detailSearchVC", sender: sender)
         }
     }
     private func filterFacilityInformationAndAddAnnotations(prefecture: JapanesePrefecture) {
@@ -132,7 +137,7 @@ class MapViewController: UIViewController {
 
     private func configurePrefectureLabel() {
         guard let prefecture = prefectureRepository.load() else { return }
-        prefectureLabel.text = "\(prefecture.nameWithSuffix)　表示中"
+        prefectureLabel.text = "\(prefecture.nameWithSuffix)の事業所　表示中"
     }
     private func configureViewLabel() {
         facilityInformationNameLabel.text = selectedFacilityInformation?.officeName
@@ -148,8 +153,12 @@ class MapViewController: UIViewController {
 }
 extension MapViewController {
     @IBSegueAction
-    func makeAssessment(coder: NSCoder, sender: Any?, segueIdentifier: String?) -> WebViewViewController? {
-        WebViewViewController(coder: coder, facilityInformation: selectedFacilityInformation!)
+    func makeDetailSearch(coder: NSCoder, sender: Any?, segueIdentifier: String?) -> DetailSearchViewController? {
+        DetailSearchViewController(
+            coder: coder,
+            facilityInformation: selectedFacilityInformation!,
+            transitionSource: .mapVeiwController
+        )
     }
 
     // swiftlint:disable:next private_action
@@ -254,22 +263,34 @@ extension MapViewController: CLLocationManagerDelegate {
     }
 }
 
-//extension MapViewController: UIPickerViewDelegate, UIPickerViewDataSource {
-//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-//        pickerViewItemsOfPrefecture[row]
-//    }
-//
-//    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-//        let prefecture = JapanesePrefecture.all
-//            .filter { $0.nameWithSuffix == pickerViewItemsOfPrefecture[row] }.first!
-//        prefectureRepository.save(prefecture: prefecture)
-//    }
-//
-//    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-//        1
-//    }
-//
-//    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-//        pickerViewItemsOfPrefecture.count
-//    }
-//}
+extension MapViewController: PickerViewKeyboardDelegate {
+    func titlesOfPickerViewKeyboard(sender: PickerViewKeyboard) -> [String] {
+        pickerViewItemsOfPrefectureNameWithSuffix
+    }
+
+    func initSelectedRow(sender: PickerViewKeyboard) -> Int {
+        guard let prefecture = prefectureRepository.load() else { return  1 }
+        let firstIndex = pickerViewItemsOfPrefectureNameWithSuffix.firstIndex(of: prefecture.nameWithSuffix)!
+        return firstIndex
+    }
+
+    func didSelectRow(sender: PickerViewKeyboard, selectedRow: Int) {
+        let prefecture = JapanesePrefecture.all[selectedRow]
+        prefectureRepository.save(prefecture: prefecture)
+    }
+
+    func didDone(sender: PickerViewKeyboard) {
+        configurePrefectureLabel()
+        mapView.removeAnnotations(annotationArray)
+        annotationArray = []
+        // 都道府県情報が保存されていれば、その情報を適応
+        // 保存されていない場合は、東京の情報を適応
+        if let loadedPrefecture = prefectureRepository.load() {
+            prefecture = loadedPrefecture
+        } else {
+            prefecture = .tokyo
+        }
+        filterFacilityInformationAndAddAnnotations(prefecture: prefecture)
+        view.endEditing(true)
+    }
+}

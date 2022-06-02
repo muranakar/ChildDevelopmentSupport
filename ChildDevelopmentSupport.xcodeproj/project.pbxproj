@@ -34,6 +34,8 @@
 		B2A945E8282C6C5A0001B737 /* FacilityInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A945E7282C6C5A0001B737 /* FacilityInformation.swift */; };
 		B2A945EA282C6D560001B737 /* UseCaseCsvConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A945E9282C6D560001B737 /* UseCaseCsvConversion.swift */; };
 		B2A945EC282C73510001B737 /* ChildDevelopmentSupport.csv in Resources */ = {isa = PBXBuildFile; fileRef = B2A945EB282C73500001B737 /* ChildDevelopmentSupport.csv */; };
+		B2B01A442848203D00B820AC /* DetailSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2B01A432848203D00B820AC /* DetailSearch.storyboard */; };
+		B2B01A462848204E00B820AC /* DetailSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B01A452848204E00B820AC /* DetailSearchViewController.swift */; };
 		B2B85EFA282D43400065E12E /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2B85EF9282D43400065E12E /* Map.storyboard */; };
 		B2B85EFC282D434B0065E12E /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2B85EFB282D434B0065E12E /* Setting.storyboard */; };
 		B2B85EFE282D43580065E12E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B85EFD282D43580065E12E /* MapViewController.swift */; };
@@ -74,6 +76,8 @@
 		B2A945E7282C6C5A0001B737 /* FacilityInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacilityInformation.swift; sourceTree = "<group>"; };
 		B2A945E9282C6D560001B737 /* UseCaseCsvConversion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UseCaseCsvConversion.swift; sourceTree = "<group>"; };
 		B2A945EB282C73500001B737 /* ChildDevelopmentSupport.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ChildDevelopmentSupport.csv; sourceTree = "<group>"; };
+		B2B01A432848203D00B820AC /* DetailSearch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailSearch.storyboard; sourceTree = "<group>"; };
+		B2B01A452848204E00B820AC /* DetailSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSearchViewController.swift; sourceTree = "<group>"; };
 		B2B85EF9282D43400065E12E /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		B2B85EFB282D434B0065E12E /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		B2B85EFD282D43580065E12E /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -243,14 +247,24 @@
 				B294DF94283315CF00C7C809 /* UIComponents */,
 				B2B85F03282D44B70065E12E /* Initial */,
 				B2B85F01282D43C70065E12E /* Map */,
-				B2916E8A282EFBA5006134BE /* WebView */,
 				B2C2E8E42841142A001A4316 /* Search */,
+				B2B01A422848201900B820AC /* DetailSearch */,
+				B2916E8A282EFBA5006134BE /* WebView */,
 				B2B85F02282D43DA0065E12E /* Setting */,
 				B2A945DA282C6B850001B737 /* Assets.xcassets */,
 				B2A945DC282C6B850001B737 /* LaunchScreen.storyboard */,
 				B2A945DF282C6B850001B737 /* Info.plist */,
 			);
 			path = ChildDevelopmentSupport;
+			sourceTree = "<group>";
+		};
+		B2B01A422848201900B820AC /* DetailSearch */ = {
+			isa = PBXGroup;
+			children = (
+				B2B01A432848203D00B820AC /* DetailSearch.storyboard */,
+				B2B01A452848204E00B820AC /* DetailSearchViewController.swift */,
+			);
+			path = DetailSearch;
 			sourceTree = "<group>";
 		};
 		B2B85F01282D43C70065E12E /* Map */ = {
@@ -360,6 +374,7 @@
 				B2A945DB282C6B850001B737 /* Assets.xcassets in Resources */,
 				B2A945D9282C6B810001B737 /* Main.storyboard in Resources */,
 				B2B85EFC282D434B0065E12E /* Setting.storyboard in Resources */,
+				B2B01A442848203D00B820AC /* DetailSearch.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,6 +457,7 @@
 				B2981494282DD87A00A3D0C3 /* PrefectureRepository.swift in Sources */,
 				B298148E282DCAB500A3D0C3 /* DecoderFacliityInformation.swift in Sources */,
 				B2381DF7284433D100A9A9C7 /* GoogleAdID.swift in Sources */,
+				B2B01A462848204E00B820AC /* DetailSearchViewController.swift in Sources */,
 				B2A945D2282C6B810001B737 /* AppDelegate.swift in Sources */,
 				B294DF912833103E00C7C809 /* PasteboardFormatterFacilityInformation.swift in Sources */,
 				B2C2E8E828411466001A4316 /* SearchViewController.swift in Sources */,

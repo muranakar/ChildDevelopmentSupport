@@ -23,6 +23,7 @@ class SearchViewController: UIViewController {
     private var searchString: String = ""
 
     var filitedfacilityInformation: [FacilityInformation] = []
+    private var selectedFacilityInformation: FacilityInformation?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,57 +90,72 @@ class SearchViewController: UIViewController {
 
     private func searchAndReloadTableViewAndAnimationindicator(searchText: String) {
         // インジケーターを表示＆アニメーション開始
-                indicator.startAnimating()
+        indicator.startAnimating()
 
-                let dispatchQueue = DispatchQueue.global()
-                // 変数の宣言の部分で、searchTimerを宣言しています。
-                searchTimer?.invalidate()
-                // withTimeIntervalの部分で、○○秒入力がなければ、下の処理が行われない実装に
-                searchTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: {[weak self] _ in
-                    if searchText == "" {
-                        // 読込はメインスレッドを用いない
-                        dispatchQueue.async {[weak self] in
-        //                    self?.foodListForTableView = (self?.convertAllFoodObjectToArray())!
-                            self?.filitedfacilityInformation = []
-                            // テーブルビューの更新はメインスレッドを用いる
-                            DispatchQueue.main.async {[weak self] in
-                                // インジケーターを非表示＆アニメーション終了
-                                self?.indicator.stopAnimating()
-                                self?.tableView.reloadData()
-                            }
-                        }
-                    } else {
-                        let filterSearch: FilterSearch
-                        switch self?.categorySegumentControl.selectedSegmentIndex {
-                        case 0:
-                            // 事業所名
-                            filterSearch = FilterSearch(string: "事業所名")
-                        case 1:
-                            // 会社名
-                            filterSearch = FilterSearch(string: "会社名")
-                        case 2:
-                            // 住所
-                            filterSearch = FilterSearch(string: "住所")
-                        default:
-                            fatalError("Segumentが選択されていない。")
-                        }
-                        // 読込はメインスレッドを用いない
-                        dispatchQueue.async {[weak self] in
-                            self?.filitedfacilityInformation =
-                            UseCaseSearch.filteredSearchFacilityInformation(
-                                filterSearch: filterSearch,
-                                string: searchText
-                            )
-                            // テーブルビューの更新はメインスレッドを用いる
-                            DispatchQueue.main.async {[weak self] in
-                                // インジケーターを非表示＆アニメーション終了
-                                self?.indicator.stopAnimating()
-                                self?.tableView.setContentOffset(.zero, animated: true)
-                                self?.tableView.reloadData()
-                            }
-                        }
+        let dispatchQueue = DispatchQueue.global()
+        // 変数の宣言の部分で、searchTimerを宣言しています。
+        searchTimer?.invalidate()
+        // withTimeIntervalの部分で、○○秒入力がなければ、下の処理が行われない実装に
+        searchTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: {[weak self] _ in
+            if searchText == "" {
+                // 読込はメインスレッドを用いない
+                dispatchQueue.async {[weak self] in
+                    //                    self?.foodListForTableView = (self?.convertAllFoodObjectToArray())!
+                    self?.filitedfacilityInformation = []
+                    // テーブルビューの更新はメインスレッドを用いる
+                    DispatchQueue.main.async {[weak self] in
+                        // インジケーターを非表示＆アニメーション終了
+                        self?.indicator.stopAnimating()
+                        self?.tableView.reloadData()
                     }
-                })
+                }
+            } else {
+                let filterSearch: FilterSearch
+                switch self?.categorySegumentControl.selectedSegmentIndex {
+                case 0:
+                    // 事業所名
+                    filterSearch = FilterSearch(string: "事業所名")
+                case 1:
+                    // 会社名
+                    filterSearch = FilterSearch(string: "会社名")
+                case 2:
+                    // 住所
+                    filterSearch = FilterSearch(string: "住所")
+                default:
+                    fatalError("Segumentが選択されていない。")
+                }
+                // 読込はメインスレッドを用いない
+                dispatchQueue.async {[weak self] in
+                    self?.filitedfacilityInformation =
+                    UseCaseSearch.filteredSearchFacilityInformation(
+                        filterSearch: filterSearch,
+                        string: searchText
+                    )
+                    // テーブルビューの更新はメインスレッドを用いる
+                    DispatchQueue.main.async {[weak self] in
+                        // インジケーターを非表示＆アニメーション終了
+                        self?.indicator.stopAnimating()
+                        self?.tableView.setContentOffset(.zero, animated: true)
+                        self?.tableView.reloadData()
+                    }
+                }
+            }
+        })
+    }
+}
+// MARK: - Segue
+extension SearchViewController {
+    @IBSegueAction
+    func makeDetailSearch(coder: NSCoder, sender: Any?, segueIdentifier: String?) -> DetailSearchViewController? {
+        DetailSearchViewController(
+            coder: coder,
+            facilityInformation: selectedFacilityInformation!,
+            transitionSource: .searchViewController
+        )
+    }
+
+    // swiftlint:disable:next private_action
+    @IBAction func backToSearchViewController(segue: UIStoryboardSegue) {
     }
 }
 
@@ -192,6 +208,12 @@ extension SearchViewController: UITableViewDataSource {
             fatalError("segumentが選択されていません。")
         }
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedFacilityInformation = filitedfacilityInformation[indexPath.row]
+        if selectedFacilityInformation != nil {
+            performSegue(withIdentifier: "detailSearch", sender: nil)
+        }
     }
 }
 

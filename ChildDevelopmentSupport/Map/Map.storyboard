@@ -96,7 +96,7 @@
                                 <rect key="frame" x="20" y="705" width="374" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bok-97-xyR" customClass="FunctionSelectionItemButton" customModule="ChildDevelopmentSupport">
-                                        <rect key="frame" x="0.0" y="0.0" width="179" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="148.5" height="40"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="コピー"/>
                                         <connections>
@@ -104,9 +104,9 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y74-Xs-tIz" customClass="FunctionSelectionItemButton" customModule="ChildDevelopmentSupport">
-                                        <rect key="frame" x="199" y="0.0" width="175" height="40"/>
+                                        <rect key="frame" x="168.5" y="0.0" width="205.5" height="40"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="検索"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="詳細情報"/>
                                         <connections>
                                             <action selector="searchFacilityInformation:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="YqM-MK-aTl"/>
                                         </connections>
@@ -123,23 +123,23 @@
                                     <constraint firstAttribute="height" constant="50" id="YNj-mk-Avq"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sjO-eZ-kmf" customClass="PickerKeyboard" customModule="ChildDevelopmentSupport">
-                                <rect key="frame" x="137" y="54" width="140" height="40"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sjO-eZ-kmf" customClass="PickerViewKeyboard" customModule="ChildDevelopmentSupport">
+                                <rect key="frame" x="107" y="54" width="200" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="56Z-cI-LC6">
-                                        <rect key="frame" x="49" y="9.5" width="42" height="21"/>
+                                        <rect key="frame" x="79" y="9.5" width="42" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="jZJ-4U-lbF"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="y21-LW-HoK"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" systemColor="tintColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="140" id="2jv-cS-p0b"/>
+                                    <constraint firstAttribute="width" constant="200" id="2jv-cS-p0b"/>
                                     <constraint firstItem="56Z-cI-LC6" firstAttribute="centerX" secondItem="sjO-eZ-kmf" secondAttribute="centerX" id="JdO-u8-FtT"/>
                                     <constraint firstAttribute="height" constant="40" id="aHB-AU-LIs"/>
                                     <constraint firstItem="56Z-cI-LC6" firstAttribute="centerY" secondItem="sjO-eZ-kmf" secondAttribute="centerY" id="nNG-GF-G6Z"/>
@@ -180,8 +180,9 @@
                         <outlet property="facilityInformationNameLabel" destination="PkR-2U-sfA" id="pNi-In-7fl"/>
                         <outlet property="facilityInformationTelLabel" destination="R2w-at-xwj" id="euM-20-rSC"/>
                         <outlet property="mapView" destination="Ayj-MI-RPd" id="QuG-ED-GRd"/>
+                        <outlet property="pickerKeyboardView" destination="sjO-eZ-kmf" id="Pru-kX-PSh"/>
                         <outlet property="prefectureLabel" destination="56Z-cI-LC6" id="9j5-sk-5DL"/>
-                        <segue destination="vQq-rw-HZc" kind="presentation" identifier="webView" destinationCreationSelector="makeAssessmentWithCoder:sender:segueIdentifier:" modalPresentationStyle="fullScreen" id="HH0-hj-Fcl"/>
+                        <segue destination="LaR-pc-A4f" kind="presentation" identifier="detailSearchVC" destinationCreationSelector="makeDetailSearchWithCoder:sender:segueIdentifier:" modalPresentationStyle="fullScreen" id="nNc-gh-3st"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -194,15 +195,13 @@
             </objects>
             <point key="canvasLocation" x="50.724637681159422" y="85.714285714285708"/>
         </scene>
-        <!--WebView-->
-        <scene sceneID="Jlh-cY-7Wv">
+        <!--DetailSearch-->
+        <scene sceneID="ZcP-sn-URZ">
             <objects>
-                <viewControllerPlaceholder storyboardName="WebView" id="vQq-rw-HZc" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="dQs-dM-Ce7"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jsf-wi-dMN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="DetailSearch" id="LaR-pc-A4f" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VJQ-Xv-5b9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="614" y="86"/>
+            <point key="canvasLocation" x="604" y="87"/>
         </scene>
     </scenes>
     <designables>
@@ -210,7 +209,7 @@
             <size key="intrinsicContentSize" width="83" height="31"/>
         </designable>
         <designable name="Y74-Xs-tIz">
-            <size key="intrinsicContentSize" width="53" height="31"/>
+            <size key="intrinsicContentSize" width="81.5" height="31"/>
         </designable>
         <designable name="bok-97-xyR">
             <size key="intrinsicContentSize" width="67" height="31"/>

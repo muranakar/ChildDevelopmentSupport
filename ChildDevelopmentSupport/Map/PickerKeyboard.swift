@@ -7,22 +7,21 @@
 // 参考：https://tech.studyplus.co.jp/entry/2018/10/15/114548
 import UIKit
 
-class PickerKeyboard: UIControl {
-    /*
-     // Only override draw() if you perform custom drawing.
-     // An empty implementation adversely affects performance during animation.
-     override func draw(_ rect: CGRect) {
-     // Drawing code
-     }
-     */
+class PickerViewKeyboard: UIControl {
+    var delegate: PickerViewKeyboardDelegate!
+    var pickerView: UIPickerView!
+
+    var data: [String] {
+        return delegate.titlesOfPickerViewKeyboard(sender: self)
+    }
+
     private let prefectureRepository = PrefectureRepository()
     private let  pickerViewItemsOfPrefecture = JapanesePrefecture.all.map { prefecture in
-          prefecture.nameWithSuffix
-      }
+        prefecture.nameWithSuffix
+    }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-
         addTarget(self, action: #selector(tappedPickerKeyboard(_:)), for: .touchDown)
     }
     override init(frame: CGRect) {
@@ -50,7 +49,7 @@ class PickerKeyboard: UIControl {
         layer.borderWidth = 2
     }
 
-    @objc func tappedPickerKeyboard(_ sender: PickerKeyboard) {
+    @objc func tappedPickerKeyboard(_ sender: PickerViewKeyboard) {
         becomeFirstResponder()
     }
 
@@ -59,61 +58,44 @@ class PickerKeyboard: UIControl {
     }
 
     override var inputAccessoryView: UIView? {
-        let view = UIVisualEffectView(effect: UIBlurEffect(style: .extraLight))
-        view.frame = CGRect(x: 0, y: 0, width: frame.width, height: 44)
+        let toolbar = UIToolbar()
+        toolbar.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: 44)
+        let space =
+        UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: self, action: nil)
+        space.width = 10
+        let flexSpaceItem =
+        UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        let doneButtonItem =
+        UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(PickerViewKeyboard.donePicker))
+        doneButtonItem.title = "閉じる"
 
-        let closeButton = UIButton(type: .custom)
-        closeButton.setTitle("閉じる", for: .normal)
-        closeButton.sizeToFit()
-        closeButton.addTarget(self, action: #selector(tappedCloseButton(_:)), for: .touchUpInside)
-        closeButton.setTitleColor(UIColor(red: 0, green: 122/255, blue: 1, alpha: 1.0), for: .normal)
+        let toolbarItems = [space, flexSpaceItem, doneButtonItem, space]
+        toolbar.setItems(toolbarItems, animated: true)
 
-        view.contentView.addSubview(closeButton)
-
-        closeButton.translatesAutoresizingMaskIntoConstraints = false
-        closeButton.widthAnchor.constraint(equalToConstant: closeButton.frame.size.width).isActive = true
-        closeButton.heightAnchor.constraint(equalToConstant: closeButton.frame.size.height).isActive = true
-        closeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 5).isActive = true
-        closeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
-
-        return view
+        return toolbar
     }
 
     override var inputView: UIView? {
-        let pickerView: UIPickerView = UIPickerView()
+        pickerView = UIPickerView()
         pickerView.delegate = self
         pickerView.dataSource = self
-        pickerView.backgroundColor = UIColor.white
-        pickerView.autoresizingMask = [.flexibleHeight]
+        let row = delegate.initSelectedRow(sender: self)
+        pickerView.selectRow(row, inComponent: 0, animated: true)
 
-        // SafeAreaに対応させる為にUIViewを挟む
-        let view = UIView()
-        view.backgroundColor = .white
-        view.autoresizingMask = [.flexibleHeight]
-        view.addSubview(pickerView)
-
-        pickerView.translatesAutoresizingMaskIntoConstraints = false
-        pickerView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        pickerView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        pickerView.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor).isActive = true
-
-        return view
+        return pickerView
     }
-
-    @objc private func tappedCloseButton(_ sender: UIButton) {
-        resignFirstResponder()
+    @objc func donePicker() {
+        delegate.didDone(sender: self)
     }
 }
 
-extension PickerKeyboard: UIPickerViewDelegate, UIPickerViewDataSource {
+extension PickerViewKeyboard: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        pickerViewItemsOfPrefecture[row]
+        data[row]
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        let prefecture = JapanesePrefecture.all
-            .filter { $0.nameWithSuffix == pickerViewItemsOfPrefecture[row] }.first!
-        prefectureRepository.save(prefecture: prefecture)
+        delegate.didSelectRow(sender: self, selectedRow: row)
     }
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -121,6 +103,13 @@ extension PickerKeyboard: UIPickerViewDelegate, UIPickerViewDataSource {
     }
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        pickerViewItemsOfPrefecture.count
+        data.count
     }
+}
+
+protocol PickerViewKeyboardDelegate {
+    func titlesOfPickerViewKeyboard(sender: PickerViewKeyboard) -> [String]
+    func initSelectedRow(sender: PickerViewKeyboard) -> Int
+    func didSelectRow(sender: PickerViewKeyboard, selectedRow: Int)
+    func didDone(sender: PickerViewKeyboard)
 }
