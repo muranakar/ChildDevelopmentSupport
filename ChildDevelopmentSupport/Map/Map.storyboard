@@ -96,17 +96,17 @@
                                 <rect key="frame" x="20" y="705" width="374" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bok-97-xyR" customClass="FunctionSelectionItemButton" customModule="ChildDevelopmentSupport">
-                                        <rect key="frame" x="0.0" y="0.0" width="148.5" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="159" height="40"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="コピー"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="doc.on.doc" catalog="system" title="コピー"/>
                                         <connections>
                                             <action selector="copyFacilityInformation:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="8ir-Vc-m24"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y74-Xs-tIz" customClass="FunctionSelectionItemButton" customModule="ChildDevelopmentSupport">
-                                        <rect key="frame" x="168.5" y="0.0" width="205.5" height="40"/>
+                                        <rect key="frame" x="179" y="0.0" width="195" height="40"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="詳細情報"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="doc.text" catalog="system" title="詳細情報"/>
                                         <connections>
                                             <action selector="searchFacilityInformation:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="YqM-MK-aTl"/>
                                         </connections>
@@ -209,13 +209,15 @@
             <size key="intrinsicContentSize" width="83" height="31"/>
         </designable>
         <designable name="Y74-Xs-tIz">
-            <size key="intrinsicContentSize" width="81.5" height="31"/>
+            <size key="intrinsicContentSize" width="101.5" height="31"/>
         </designable>
         <designable name="bok-97-xyR">
-            <size key="intrinsicContentSize" width="67" height="31"/>
+            <size key="intrinsicContentSize" width="90" height="31"/>
         </designable>
     </designables>
     <resources>
+        <image name="doc.on.doc" catalog="system" width="116" height="128"/>
+        <image name="doc.text" catalog="system" width="115" height="128"/>
         <image name="location.square" catalog="system" width="128" height="114"/>
         <image name="map" catalog="system" width="128" height="110"/>
         <systemColor name="systemBackgroundColor">

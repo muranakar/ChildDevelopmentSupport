@@ -11,8 +11,6 @@
         <!--Detail Search View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="bpu-3S-vIl" userLabel="Exit" sceneMemberID="exit"/>
                 <viewController id="Y6W-OH-hqX" customClass="DetailSearchViewController" customModule="ChildDevelopmentSupport" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -71,11 +69,15 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05s-uW-Rd3">
+                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05s-uW-Rd3">
                                                 <rect key="frame" x="0.0" y="111.5" width="33" height="61"/>
+                                                <gestureRecognizers/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" systemColor="tintColor"/>
                                                 <nil key="highlightedColor"/>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="r0d-ZW-aMV" appends="YES" id="Gm7-4T-gUE"/>
+                                                </connections>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xfa-d3-88u">
                                                 <rect key="frame" x="0.0" y="222.5" width="33" height="61.5"/>
@@ -109,49 +111,49 @@
                                         <rect key="frame" x="236" y="0.0" width="118" height="618"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ApM-ZR-rhz" customClass="FunctionSelectionItemButton" customModule="ChildDevelopmentSupport" customModuleProvider="target">
-                                                <rect key="frame" x="51" y="0.0" width="67" height="61.5"/>
+                                                <rect key="frame" x="28" y="0.0" width="90" height="61.5"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="コピー"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="doc.on.doc" catalog="system" title="コピー"/>
                                                 <connections>
                                                     <action selector="copyOfficeName:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="XMb-Dx-Wfe"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jkM-VD-uoU" customClass="FunctionSelectionItemButton" customModule="ChildDevelopmentSupport" customModuleProvider="target">
-                                                <rect key="frame" x="51" y="111.5" width="67" height="61"/>
+                                                <rect key="frame" x="28" y="111.5" width="90" height="61"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="コピー"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="doc.on.doc" catalog="system" title="コピー"/>
                                                 <connections>
                                                     <action selector="copyTelNumber:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="DL6-a2-gGr"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fto-n6-AlD" customClass="FunctionSelectionItemButton" customModule="ChildDevelopmentSupport" customModuleProvider="target">
-                                                <rect key="frame" x="51" y="222.5" width="67" height="61.5"/>
+                                                <rect key="frame" x="28" y="222.5" width="90" height="61.5"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="コピー"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="doc.on.doc" catalog="system" title="コピー"/>
                                                 <connections>
                                                     <action selector="copyFaxNumber:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="JxP-AO-gTW"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J2b-1g-V4e" customClass="FunctionSelectionItemButton" customModule="ChildDevelopmentSupport" customModuleProvider="target">
-                                                <rect key="frame" x="34.5" y="334" width="83.5" height="61.5"/>
+                                                <rect key="frame" x="41.5" y="334" width="76.5" height="61.5"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="WEB検索"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="magnifyingglass" catalog="system" title="WEB"/>
                                                 <connections>
                                                     <action selector="screenTransitionOfficeURL:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="65K-qO-Psx"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X6J-Xo-9gp" customClass="FunctionSelectionItemButton" customModule="ChildDevelopmentSupport" customModuleProvider="target">
-                                                <rect key="frame" x="34.5" y="445.5" width="83.5" height="61"/>
+                                                <rect key="frame" x="41.5" y="445.5" width="76.5" height="61"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="WEB検索"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="magnifyingglass" catalog="system" title="WEB"/>
                                                 <connections>
                                                     <action selector="screenTransitionCorporateURL:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="1sD-Qa-ZFU"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Afm-tS-9NT" customClass="FunctionSelectionItemButton" customModule="ChildDevelopmentSupport" customModuleProvider="target">
-                                                <rect key="frame" x="34.5" y="556.5" width="83.5" height="61.5"/>
+                                                <rect key="frame" x="46" y="556.5" width="72" height="61.5"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="WEB検索"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="mappin.and.ellipse" catalog="system" title="Map"/>
                                                 <connections>
                                                     <action selector="searchMapFromAdress:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="G62-Ej-SEm"/>
                                                 </connections>
@@ -204,6 +206,13 @@
                         <segue destination="bpu-3S-vIl" kind="unwind" identifier="backToSearch" unwindAction="backToSearchViewControllerWithSegue:" id="d1R-if-r95"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="bpu-3S-vIl" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="r0d-ZW-aMV">
+                    <connections>
+                        <action selector="callTelephone:" destination="Y6W-OH-hqX" id="u8R-Tn-46x"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1042.0289855072465" y="82.366071428571431"/>
         </scene>
@@ -216,13 +225,39 @@
             <point key="canvasLocation" x="1636" y="198"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="Afm-tS-9NT">
+            <size key="intrinsicContentSize" width="72" height="31"/>
+        </designable>
+        <designable name="ApM-ZR-rhz">
+            <size key="intrinsicContentSize" width="90" height="31"/>
+        </designable>
+        <designable name="J2b-1g-V4e">
+            <size key="intrinsicContentSize" width="76.5" height="31"/>
+        </designable>
+        <designable name="X6J-Xo-9gp">
+            <size key="intrinsicContentSize" width="76.5" height="31"/>
+        </designable>
+        <designable name="fto-n6-AlD">
+            <size key="intrinsicContentSize" width="90" height="31"/>
+        </designable>
+        <designable name="jkM-VD-uoU">
+            <size key="intrinsicContentSize" width="90" height="31"/>
+        </designable>
+    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="Z5t-Ig-MgT"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrowtriangle.backward.circle" catalog="system" width="128" height="121"/>
+        <image name="doc.on.doc" catalog="system" width="116" height="128"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

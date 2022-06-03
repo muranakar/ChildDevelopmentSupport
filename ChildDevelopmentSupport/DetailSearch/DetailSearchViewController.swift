@@ -69,10 +69,16 @@ class DetailSearchViewController: UIViewController {
             performSegue(withIdentifier: "backToSearch", sender: nil)
         }
     }
+    @IBAction private func callTelephone(_ sender: Any) {
+        let phoneNumber = "\(facilityInformation.officeTelephoneNumber)"
+        guard let url = URL(string: "tel://" + phoneNumber) else { return }
+        UIApplication.shared.open(url)
+    }
 
     @IBAction private func copyOfficeName(_ sender: Any) {
         copyAndAlert(string: facilityInformation.officeName, message: "事業所名の\nコピーが完了しました。")
     }
+
     @IBAction private func copyTelNumber(_ sender: Any) {
         copyAndAlert(string: facilityInformation.officeTelephoneNumber, message: "事業所電話番号の\nコピーが完了しました。")
     }
@@ -88,30 +94,18 @@ class DetailSearchViewController: UIViewController {
     }
     @IBAction private func searchMapFromAdress(_ sender: Any) {
         let address = "\(facilityInformation.address)"
-        CLGeocoder().geocodeAddressString(address) { placemarks, error in
-            if error == nil {
-                // TODO: アラート表示必要。値が見つからなかった場合。
-                // TODO: 住所を日本語で、検索することは出来ないのか？
-                print("アラート表示必要")
-                return
-            }
-            let selectedLat: CLLocationDegrees
-            let selectedLng: CLLocationDegrees
-            if let coordinate = placemarks?.first?.location?.coordinate {
-                selectedLat = coordinate.latitude
-                selectedLng = coordinate.longitude
-                let latitude = "\(selectedLat)"
-                let longitude = "\(selectedLng)"
-                let urlString: String!
-                if UIApplication.shared.canOpenURL(URL(string: "comgooglemaps://")!) {
-                    urlString = "comgooglemaps://?daddr=\(latitude),\(longitude)&directionsmode=driving&zoom=14"
-                } else {
-                    urlString = "http://maps.apple.com/?daddr=\(latitude),\(longitude)&dirflg=w"
-                }
-                if let url = URL(string: urlString) {
-                    UIApplication.shared.open(url)
-                }
-            }
+        var url: URL?
+        let encoded =
+        "comgooglemaps://?q=\(address)".addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)!
+        url = URL(string: encoded)
+        if UIApplication.shared.canOpenURL(url!) {
+            // GoogleMapを開く。
+            UIApplication.shared.open(url!)
+        } else {
+            // appleMapを開く。
+            let encoded = "http://maps.apple.com/?q=\(address)".addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)!
+            url = URL(string: encoded)
+            UIApplication.shared.open(url!)
         }
     }
 
