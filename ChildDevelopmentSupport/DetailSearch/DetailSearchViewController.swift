@@ -80,7 +80,7 @@ class DetailSearchViewController: UIViewController {
     }
 
     @IBAction private func copyTelNumber(_ sender: Any) {
-        copyAndAlert(string: facilityInformation.officeTelephoneNumber, message: "事業所電話番号の\nコピーが完了しました。")
+        copyAndAlert(string: facilityInformation.officeTelephoneNumber, message: "事業所の電話番号の\nコピーが完了しました。")
     }
     @IBAction private func copyFaxNumber(_ sender: Any) {
         copyAndAlert(string: facilityInformation.officeFax, message: "事業所のFAX番号の\nコピーが完了しました。")
