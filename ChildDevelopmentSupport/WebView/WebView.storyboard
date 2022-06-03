@@ -22,12 +22,12 @@
                                     <constraint firstAttribute="height" constant="50" id="zot-9G-lDM"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem title="戻る" id="Qia-mI-kn3">
+                                    <barButtonItem title="戻る" image="arrow.left" catalog="system" id="Qia-mI-kn3">
                                         <connections>
                                             <action selector="goBackWebView:" destination="Y6W-OH-hqX" id="O52-JQ-OwG"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="進む" id="sJC-UA-A37">
+                                    <barButtonItem title="進む" image="arrow.right" catalog="system" id="sJC-UA-A37">
                                         <connections>
                                             <action selector="goForwardWebView:" destination="Y6W-OH-hqX" id="QNG-OX-gyB"/>
                                         </connections>
@@ -48,7 +48,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gst-dl-Ldg" customClass="FunctionSelectionItemButton" customModule="ChildDevelopmentSupport">
                                         <rect key="frame" x="0.0" y="0.0" width="177" height="30"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="事業所情報に戻る"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="情報に戻る"/>
                                         <connections>
                                             <segue destination="kG2-ex-tog" kind="unwind" unwindAction="backToDetailSearchViewControllerWithSegue:" id="Iy4-8Q-GJc"/>
                                         </connections>
@@ -103,13 +103,15 @@
     </scenes>
     <designables>
         <designable name="Gst-dl-Ldg">
-            <size key="intrinsicContentSize" width="138.5" height="31"/>
+            <size key="intrinsicContentSize" width="95.5" height="31"/>
         </designable>
         <designable name="lG6-Bi-vtg">
             <size key="intrinsicContentSize" width="113.5" height="31"/>
         </designable>
     </designables>
     <resources>
+        <image name="arrow.left" catalog="system" width="128" height="98"/>
+        <image name="arrow.right" catalog="system" width="128" height="98"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
