@@ -50,21 +50,23 @@ class WebViewViewController: UIViewController {
     }
 
     private func serchOfficeURLOrCorporateURLOrGoogle() {
-        // TODO: 条件分岐をする必要がある。OFFICE CORPORATE 中身が入ってない場合。　地図
         let url: URL?
-        if facilityInformation.officeURL != "" {
+        switch showDesignation {
+        case .officeURL:
             let urlString = facilityInformation.officeURL
             let encodingString = urlString.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)
             url = URL(string: encodingString!)
-            print(facilityInformation.officeURL)
-        } else if facilityInformation.corporateURL != "" {
-            url = URL(string: facilityInformation.corporateURL)
-            print(facilityInformation.corporateURL)
-        } else {
+        case .corporateURL:
+            let urlString = facilityInformation.corporateURL
+            let encodingString = urlString.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)
+            url = URL(string: encodingString!)
+        case .mapURL:
+            // TODO: mapのURL作成
+            fatalError("map未設定:WebView")
+        case .noDesignation:
             let urlString = "https://www.google.co.jp/search?q=\(facilityInformation.officeName)"
             let encodingString = urlString.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)
             url = URL(string: encodingString!)
-            print("https://www.google.co.jp/search?q=\(facilityInformation.officeName)")
         }
         let myRequest = URLRequest(url: url!)
         webView.load(myRequest)

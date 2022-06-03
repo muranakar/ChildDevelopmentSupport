@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import MapKit
+// 逆ジオコーディングのために、import
 
 class DetailSearchViewController: UIViewController {
     enum TransitionSource {
@@ -85,6 +87,32 @@ class DetailSearchViewController: UIViewController {
         performSegue(withIdentifier: "webViewCorporateURL", sender: sender)
     }
     @IBAction private func searchMapFromAdress(_ sender: Any) {
+        let address = "\(facilityInformation.address)"
+        CLGeocoder().geocodeAddressString(address) { placemarks, error in
+            if error == nil {
+                // TODO: アラート表示必要。値が見つからなかった場合。
+                // TODO: 住所を日本語で、検索することは出来ないのか？
+                print("アラート表示必要")
+                return
+            }
+            let selectedLat: CLLocationDegrees
+            let selectedLng: CLLocationDegrees
+            if let coordinate = placemarks?.first?.location?.coordinate {
+                selectedLat = coordinate.latitude
+                selectedLng = coordinate.longitude
+                let latitude = "\(selectedLat)"
+                let longitude = "\(selectedLng)"
+                let urlString: String!
+                if UIApplication.shared.canOpenURL(URL(string: "comgooglemaps://")!) {
+                    urlString = "comgooglemaps://?daddr=\(latitude),\(longitude)&directionsmode=driving&zoom=14"
+                } else {
+                    urlString = "http://maps.apple.com/?daddr=\(latitude),\(longitude)&dirflg=w"
+                }
+                if let url = URL(string: urlString) {
+                    UIApplication.shared.open(url)
+                }
+            }
+        }
     }
 
     private func copyAndAlert(string: String, message: String) {
