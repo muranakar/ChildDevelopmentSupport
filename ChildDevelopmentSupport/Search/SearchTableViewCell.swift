@@ -12,15 +12,18 @@ class SearchTableViewCell: UITableViewCell {
     @IBOutlet weak private var firstDetailInformationLabel: UILabel!
     @IBOutlet weak private var secondTitleLabel: UILabel!
     @IBOutlet weak private var secondDetailInformationLabel: UILabel!
+    @IBOutlet weak private var mapAttentionLabel: UILabel!
     func configure(
         firstTitle: String,
         firstInformation: String,
         secondTitle: String,
-        secondInformation: String
+        secondInformation: String,
+        isHiddenMapAttention: Bool
     ) {
         firstTitleLabel.text = firstTitle
         firstDetailInformationLabel.text = firstInformation
         secondTitleLabel.text = secondTitle
         secondDetailInformationLabel.text = secondInformation
+        mapAttentionLabel.isHidden = isHiddenMapAttention
     }
 }

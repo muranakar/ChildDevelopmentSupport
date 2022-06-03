@@ -176,7 +176,11 @@ extension SearchViewController: UITableViewDataSource {
             .dequeueReusableCell(
                 withIdentifier: "searchCell"
             ) as? SearchTableViewCell else { fatalError() }
-
+        // 緯度、経度が空文字だった場合は、true、それ以外は、false
+        let isHiddenMapAttention =
+        filitedfacilityInformation[indexPath.row].latitude != "" ||
+        filitedfacilityInformation[indexPath.row].longitude != ""
+        
         switch categorySegumentControl.selectedSegmentIndex {
         case 0:
             // 事業所名
@@ -184,7 +188,8 @@ extension SearchViewController: UITableViewDataSource {
                 firstTitle: "事業所名",
                 firstInformation: filitedfacilityInformation[indexPath.row].officeName,
                 secondTitle: "住所",
-                secondInformation: filitedfacilityInformation[indexPath.row].address
+                secondInformation: filitedfacilityInformation[indexPath.row].address,
+                isHiddenMapAttention: isHiddenMapAttention
             )
         case 1:
             // 会社名
@@ -193,7 +198,8 @@ extension SearchViewController: UITableViewDataSource {
                 firstTitle: "事業所名",
                 firstInformation: filitedfacilityInformation[indexPath.row].officeName,
                 secondTitle: "会社名",
-                secondInformation: filitedfacilityInformation[indexPath.row].corporateName
+                secondInformation: filitedfacilityInformation[indexPath.row].corporateName,
+                isHiddenMapAttention: isHiddenMapAttention
             )
         case 2:
             //　住所
@@ -202,7 +208,8 @@ extension SearchViewController: UITableViewDataSource {
                 firstTitle: "事業所名",
                 firstInformation: filitedfacilityInformation[indexPath.row].officeName,
                 secondTitle: "住所",
-                secondInformation: filitedfacilityInformation[indexPath.row].address
+                secondInformation: filitedfacilityInformation[indexPath.row].address,
+                isHiddenMapAttention: isHiddenMapAttention
             )
         default:
             fatalError("segumentが選択されていません。")
