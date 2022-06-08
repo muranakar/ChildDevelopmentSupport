@@ -12,6 +12,7 @@
 		B2381DFB2844414000A9A9C7 /* SearchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2381DFA2844414000A9A9C7 /* SearchUseCase.swift */; };
 		B25355662844F98B003F44C7 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25355652844F98B003F44C7 /* SearchTableViewCell.swift */; };
 		B254D7092836E26D00720231 /* CSVsyurousien.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254D7082836E26D00720231 /* CSVsyurousien.swift */; };
+		B26E714728513920002C3B4C /* ChildDevelopmentSupport.csv in Resources */ = {isa = PBXBuildFile; fileRef = B26E714628513920002C3B4C /* ChildDevelopmentSupport.csv */; };
 		B2916E8C282EFBCF006134BE /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2916E8B282EFBCF006134BE /* WebViewViewController.swift */; };
 		B2916E8E282EFBDC006134BE /* WebView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2916E8D282EFBDC006134BE /* WebView.storyboard */; };
 		B2916E91282EFCAF006134BE /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2916E90282EFCAF006134BE /* WebKit.framework */; };
@@ -33,7 +34,6 @@
 		B2A945DE282C6B850001B737 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2A945DC282C6B850001B737 /* LaunchScreen.storyboard */; };
 		B2A945E8282C6C5A0001B737 /* FacilityInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A945E7282C6C5A0001B737 /* FacilityInformation.swift */; };
 		B2A945EA282C6D560001B737 /* UseCaseCsvConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A945E9282C6D560001B737 /* UseCaseCsvConversion.swift */; };
-		B2A945EC282C73510001B737 /* ChildDevelopmentSupport.csv in Resources */ = {isa = PBXBuildFile; fileRef = B2A945EB282C73500001B737 /* ChildDevelopmentSupport.csv */; };
 		B2B01A442848203D00B820AC /* DetailSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2B01A432848203D00B820AC /* DetailSearch.storyboard */; };
 		B2B01A462848204E00B820AC /* DetailSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B01A452848204E00B820AC /* DetailSearchViewController.swift */; };
 		B2B85EFA282D43400065E12E /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2B85EF9282D43400065E12E /* Map.storyboard */; };
@@ -52,6 +52,7 @@
 		B2381DFA2844414000A9A9C7 /* SearchUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUseCase.swift; sourceTree = "<group>"; };
 		B25355652844F98B003F44C7 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		B254D7082836E26D00720231 /* CSVsyurousien.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVsyurousien.swift; sourceTree = "<group>"; };
+		B26E714628513920002C3B4C /* ChildDevelopmentSupport.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ChildDevelopmentSupport.csv; sourceTree = "<group>"; };
 		B2916E8B282EFBCF006134BE /* WebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
 		B2916E8D282EFBDC006134BE /* WebView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WebView.storyboard; sourceTree = "<group>"; };
 		B2916E90282EFCAF006134BE /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
@@ -75,7 +76,6 @@
 		B2A945DF282C6B850001B737 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2A945E7282C6C5A0001B737 /* FacilityInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacilityInformation.swift; sourceTree = "<group>"; };
 		B2A945E9282C6D560001B737 /* UseCaseCsvConversion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UseCaseCsvConversion.swift; sourceTree = "<group>"; };
-		B2A945EB282C73500001B737 /* ChildDevelopmentSupport.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ChildDevelopmentSupport.csv; sourceTree = "<group>"; };
 		B2B01A432848203D00B820AC /* DetailSearch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailSearch.storyboard; sourceTree = "<group>"; };
 		B2B01A452848204E00B820AC /* DetailSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSearchViewController.swift; sourceTree = "<group>"; };
 		B2B85EF9282D43400065E12E /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
@@ -201,7 +201,7 @@
 		B2981489282DB07000A3D0C3 /* CSV */ = {
 			isa = PBXGroup;
 			children = (
-				B2A945EB282C73500001B737 /* ChildDevelopmentSupport.csv */,
+				B26E714628513920002C3B4C /* ChildDevelopmentSupport.csv */,
 				B254D7072836E23900720231 /* syurousien */,
 			);
 			path = CSV;
@@ -366,7 +366,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2A945DE282C6B850001B737 /* LaunchScreen.storyboard in Resources */,
-				B2A945EC282C73510001B737 /* ChildDevelopmentSupport.csv in Resources */,
+				B26E714728513920002C3B4C /* ChildDevelopmentSupport.csv in Resources */,
 				B2916E8E282EFBDC006134BE /* WebView.storyboard in Resources */,
 				B2C2E8E628411450001A4316 /* Search.storyboard in Resources */,
 				B2B85EFA282D43400065E12E /* Map.storyboard in Resources */,

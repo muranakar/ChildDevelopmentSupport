@@ -25,7 +25,9 @@ struct UseCaseCsvConversion {
         csvLineOneDimensional.forEach { string in
             var array: [String] = []
             array = string.components(separatedBy: ",")
-            guard array.count == 29 else { return }
+            guard array.count == 29 else {
+                print(array)
+                return }
             csvLineTwoDimensional.append(array)
         }
         // 二次元配列のString型を、共通型に変換
