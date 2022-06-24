@@ -10,6 +10,7 @@
 		1208988BA197A3B28E2F07EE /* Pods_ChildDevelopmentSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63F6E0983C062372463F4FED /* Pods_ChildDevelopmentSupport.framework */; };
 		B2381DF7284433D100A9A9C7 /* GoogleAdID.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2381DF6284433D100A9A9C7 /* GoogleAdID.swift */; };
 		B2381DFB2844414000A9A9C7 /* SearchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2381DFA2844414000A9A9C7 /* SearchUseCase.swift */; };
+		B24D146D2865C4F600127B72 /* ReviewRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24D146C2865C4F600127B72 /* ReviewRepository.swift */; };
 		B25355662844F98B003F44C7 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25355652844F98B003F44C7 /* SearchTableViewCell.swift */; };
 		B254D7092836E26D00720231 /* CSVsyurousien.swift in Sources */ = {isa = PBXBuildFile; fileRef = B254D7082836E26D00720231 /* CSVsyurousien.swift */; };
 		B26E714728513920002C3B4C /* ChildDevelopmentSupport.csv in Resources */ = {isa = PBXBuildFile; fileRef = B26E714628513920002C3B4C /* ChildDevelopmentSupport.csv */; };
@@ -50,6 +51,7 @@
 		AE404B96B74696F554C5D796 /* Pods-ChildDevelopmentSupport.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChildDevelopmentSupport.release.xcconfig"; path = "Target Support Files/Pods-ChildDevelopmentSupport/Pods-ChildDevelopmentSupport.release.xcconfig"; sourceTree = "<group>"; };
 		B2381DF6284433D100A9A9C7 /* GoogleAdID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAdID.swift; sourceTree = "<group>"; };
 		B2381DFA2844414000A9A9C7 /* SearchUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUseCase.swift; sourceTree = "<group>"; };
+		B24D146C2865C4F600127B72 /* ReviewRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewRepository.swift; sourceTree = "<group>"; };
 		B25355652844F98B003F44C7 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		B254D7082836E26D00720231 /* CSVsyurousien.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVsyurousien.swift; sourceTree = "<group>"; };
 		B26E714628513920002C3B4C /* ChildDevelopmentSupport.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ChildDevelopmentSupport.csv; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				B2981491282DD52300A3D0C3 /* Prefecture.swift */,
 				B2A945E7282C6C5A0001B737 /* FacilityInformation.swift */,
 				B2981493282DD87A00A3D0C3 /* PrefectureRepository.swift */,
+				B24D146C2865C4F600127B72 /* ReviewRepository.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -447,6 +450,7 @@
 				B294DFA82833211D00C7C809 /* RequestViaTwitterButton.swift in Sources */,
 				B2916E8C282EFBCF006134BE /* WebViewViewController.swift in Sources */,
 				B254D7092836E26D00720231 /* CSVsyurousien.swift in Sources */,
+				B24D146D2865C4F600127B72 /* ReviewRepository.swift in Sources */,
 				B294DFA628331F8300C7C809 /* CurrentLocationButton.swift in Sources */,
 				B294DF9D2833178400C7C809 /* Colors.swift in Sources */,
 				B2381DFB2844414000A9A9C7 /* SearchUseCase.swift in Sources */,
@@ -628,7 +632,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.3;
+				MARKETING_VERSION = 1.1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.muranaka.ChildDevelopmentSupport;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -659,7 +663,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.3;
+				MARKETING_VERSION = 1.1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.muranaka.ChildDevelopmentSupport;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
